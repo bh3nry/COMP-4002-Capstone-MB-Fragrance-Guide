@@ -1,5 +1,3 @@
----
-
 # Style Guide
 
 ## Colour Palette
@@ -14,7 +12,6 @@
 | [Text] | `#000000` | Primary text colour. |
 | [Error] | `#000000` | Error messages and alerts. |
 
----
 
 ## Typography
 
