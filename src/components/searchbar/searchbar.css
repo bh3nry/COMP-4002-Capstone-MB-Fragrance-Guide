@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .search-bar-wrapper {
   display: flex;
   align-items: center;
@@ -10,11 +14,7 @@
   width: 100%;
   max-width: 400px;
 }
- 
-.search-bar-wrapper--focused {
-  border-color: #F86F6B;
-  box-shadow: 0 0 0 3px rgba(248, 111, 107, 0.15);
-}
+
  
 .search-icon {
   display: flex;
