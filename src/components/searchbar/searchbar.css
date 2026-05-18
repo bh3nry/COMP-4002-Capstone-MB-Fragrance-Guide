@@ -15,7 +15,6 @@
   max-width: 400px;
 }
 
- 
 .search-icon {
   display: flex;
   align-items: center;
@@ -72,5 +71,9 @@
  
 .submit-button:hover {
   background: #e55a56;
+}
+
+.fragrance-list {
+    display: none;
 }
  
