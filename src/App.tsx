@@ -1,5 +1,6 @@
 import ProductCard from './components/ProductCard/ProductCard'
 import { testPerfume } from './components/ProductCard/product-data-test'
+import SearchBar from './components/searchbar/searchbar'
 import './App.css'
 
 const App = () => {
@@ -9,8 +10,11 @@ const App = () => {
       <ProductCard 
         perfumeObj={testPerfume}
       />
+      <SearchBar
+        onSearch={(query) => console.log("query:", query)}
+      />
     </>
-  )
+  );
 }
 
 export default App
