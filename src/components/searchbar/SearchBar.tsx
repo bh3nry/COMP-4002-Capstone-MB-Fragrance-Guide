@@ -21,7 +21,7 @@ export function SearchBar({ onSearch, placeholder = "Search" }: SearchBarProps) 
             }}
         >
 
-            <svg aria-hidden="true"width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="8" cy="8" r="5" stroke="#92927D" strokeWidth="1.8" />
                 <line x1="12" y1="12" x2="17" y2="17" stroke="#92927D" strokeWidth="1.8" strokeLinecap="round" />
             </svg>
