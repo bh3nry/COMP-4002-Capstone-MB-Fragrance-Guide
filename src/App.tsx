@@ -1,5 +1,5 @@
-import ProductCard from './components/ProductCard'
-import { testPerfume } from './components/product-data-test'
+import ProductCard from './components/ProductCard/ProductCard'
+import { testPerfume } from './components/ProductCard/product-data-test'
 import './App.css'
 
 const App = () => {
