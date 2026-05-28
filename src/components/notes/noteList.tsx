@@ -22,20 +22,24 @@ function NoteTable({
     const suggestions = notes.suggestions;
 
     return (
-        <ul className="custom-list">
-            <li className="list-row">
-                <div><img src={pics} alt={name} /></div>
-                <div className="note-name">{name}</div>
-                <p className="description">{description}</p>
-                <details className="dropdown">
-                    <summary>Fragrance Suggestions</summary>
-                    <ul className="menu dropdown-content">
-                        <li>{suggestions}</li>
-                    </ul>
-                </details>
-            </li>
-        </ul>
-    )
-};
+        <article className="notes-card">
+        <img 
+            src={pics} 
+            alt={name} 
+        />
+        <h3 className="note-name">{name}</h3>
+        <div className="description">
+            <p>{description}</p>
+        
+            <details className="dropdown">
+                <summary>Fragrance Suggestions</summary>
+                <ul className="menu dropdown-content">
+                    <li>{suggestions}</li>
+                </ul>
+            </details>
+        </div>
+        </article>
+    );
+}
 
 export default NoteTable;
