@@ -1,19 +1,15 @@
-.custom-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background: white;         
-    border-radius: 1rem;
-    overflow: hidden;
+.notes-unorderedlist {
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.note-name {
-    font-weight: 500px;
-    margin: 10px;
+.note-lists {
+    list-style: none;
 }
 
 .notes-card {
-    width: 250px;
+    width: 300px;
+    height: auto;
     flex-basis: 225px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -33,6 +29,11 @@
 
 }
 
+.note-name {
+    font-weight: 500px;
+    margin: 10px;
+}
+
 .description {
     display: flex;
     align-items: center;
@@ -41,8 +42,8 @@
 
 .description p {
     font-size: 0.75rem;
-    line-height: 1.4;
     width: 15rem;
+    height: 105px;
 }
 
 .dropdown {
@@ -73,3 +74,4 @@
     margin: 0;
 
 }
+
