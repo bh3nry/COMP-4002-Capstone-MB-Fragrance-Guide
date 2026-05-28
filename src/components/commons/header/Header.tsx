@@ -1,4 +1,5 @@
 import './header-style.css'
+import { NavLink } from 'react-router-dom';
 import fragrance_img from '../../../assets/fragrance.png'
 function Header() {
     return (
@@ -9,9 +10,9 @@ function Header() {
             </div>
             <nav className="topnav">
                 <ul className="liststyle">
-                    <li><a href="home">Home</a></li>
-                    <li><a href="favourites">Favourites</a></li>
-                    <li><a href="profile">Profile</a></li>
+                    <NavLink to="/"> Home </NavLink>
+                    <NavLink to="profile"> Profile </NavLink>
+                    <NavLink to="profile/favourites"> Favourites </NavLink>
                 </ul>
             </nav>
         </header>

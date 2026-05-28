@@ -1,5 +1,5 @@
-import fragranceImage from '../../assets/fragrance-placeholder.png'
-import type { ProductCardProps } from '../ProductCard/product-data-test'
+import fragranceImage from '../../../assets/fragrance-placeholder.png'
+import type { ProductCardProps } from './product-data-test'
 import './product-card.css'
 
 /**

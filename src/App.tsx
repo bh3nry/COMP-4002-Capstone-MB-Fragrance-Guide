@@ -1,42 +1,35 @@
-import ProductCard from './components/ProductCard/ProductCard'
-import { testPerfume } from './components/ProductCard/product-data-test'
-import SearchBar from './components/searchbar/SearchBar' 
-import NoteTable from './components/notes/noteList'
-import { Patchouli, Sandalwood, Juniper } from './components/notes/notes-data'
-import patchouli_img from './assets/noteimg/Patchouli_img.webp'
-import sandalwood_img from './assets/noteimg/Sandalwood_img.webp'
-import juniper_img from './assets/noteimg/picture.webp'
-import Header from './components/commons/header/Header'
- 
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './components/layout/Layout'
+import Home from './components/pages/Home'
+import Favourites from './components/pages/Favourites'
+import Profile from './components/pages/Profile'
 import './App.css'
 
-const App = () => {
 
+/**
+ * @component App
+ * @description Main component defining the global route structure.
+ * All routes are nested inside `<Layout />` with a shared Header/Nav element.
+ * 
+ * * ### Routes:
+ * - `/` Renders `Home` inside Layout
+ * - `/profile` Renders `Profile` inside Layout
+ * - `/profile/favourites` Renders `Favourites` inside Layout
+ * * @returns {React.JSX.Element} The rendered application with routing.
+ */
+const App = (): React.JSX.Element => {
   return (
-    <>
-      <Header />
-      <SearchBar
-        onSearch={(query) => console.log("query:", query)}
-      />
-      <ProductCard 
-        perfumeObj={testPerfume}
-      />
-
-      <NoteTable 
-        notes={Patchouli}
-        pics={patchouli_img}
-      />
-
-      <NoteTable 
-        notes={Sandalwood}
-        pics={sandalwood_img}
-      />
-
-      <NoteTable 
-        notes={Juniper}
-        pics={juniper_img}
-      />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='profile'>
+            <Route index element={<Profile />} />
+            <Route path="favourites" element={<Favourites />}/>
+          </Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
