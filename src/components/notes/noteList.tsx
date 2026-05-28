@@ -12,9 +12,9 @@ function NoteTable({
 }: {notes: Notes[]}) {
 
     return (
-        <ul>
+        <ul className="notes-unorderedlist">
             {notes.map((n) => (
-            <li>
+            <li className="note-lists">
                 <article className="notes-card">
                     <img 
                         src={n.image} 
@@ -24,7 +24,9 @@ function NoteTable({
                         {n.name}
                     </h3>
                     <div className="description">
-                        <p>{(n.info.map((d) => d.description)
+                        <p>
+                        {(
+                            n.info.map((d) => d.description)
                         )}
                         </p>
                         <details className="dropdown">
