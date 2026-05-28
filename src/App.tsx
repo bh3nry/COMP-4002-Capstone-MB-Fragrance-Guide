@@ -6,6 +6,7 @@ import { Patchouli, Sandalwood, Juniper } from './components/notes/notes-data'
 import patchouli_img from './assets/noteimg/Patchouli_img.webp'
 import sandalwood_img from './assets/noteimg/Sandalwood_img.webp'
 import juniper_img from './assets/noteimg/picture.webp'
+import Header from './components/commons/header/Header'
  
 import './App.css'
 
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <>
+      <Header />
       <SearchBar
         onSearch={(query) => console.log("query:", query)}
       />
