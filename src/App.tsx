@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Home from './components/pages/Home'
@@ -11,6 +12,9 @@ import { testPerfume } from './components/ProductCard/product-data-test'
 import SearchBar from './components/searchbar/SearchBar' 
 import NoteTable from './components/notes/noteList'
 import { ScentNotes } from './components/notes/notes-data'
+=======
+import Favourites from './components/commons/favourites/Favourite'
+>>>>>>> afb8043 (feat: implement favourites functionality and update note display)
 import Header from './components/commons/header/Header'
  
 >>>>>>> 0b54b2d (feat: refactored noteList function to map notes-data object and renamed images in assets for notes.)
@@ -47,16 +51,7 @@ const App = (): React.JSX.Element => {
 =======
     <>
       <Header />
-      <SearchBar
-        onSearch={(query) => console.log("query:", query)}
-      />
-      <ProductCard 
-        perfumeObj={testPerfume}
-      />
-
-      <NoteTable 
-        notes={ScentNotes}
-      />
+      <Favourites />
     </>
 >>>>>>> 0b54b2d (feat: refactored noteList function to map notes-data object and renamed images in assets for notes.)
   );

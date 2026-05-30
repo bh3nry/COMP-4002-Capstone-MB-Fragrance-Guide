@@ -7,44 +7,53 @@ import "./notes-styles.css";
     for a fragrance note
     @returns: a JSX element that renders the note's name, description, and suggestions
 */
-function NoteTable({
-    notes
-}: {notes: Notes[]}) {
-
+function NoteDisplay({
+    notes,
+    onSaveClick
+}: {
+    notes: Notes[],
+    onSaveClick: () => void
+}) {
     return (
-        <ul className="notes-unorderedlist">
-            {notes.map((n) => (
-            <li className="note-lists">
-                <article className="notes-card">
-                    <img 
-                        src={n.image} 
-                        alt={n.name} 
-                    />
-                    <h3 className="note-name">
-                        {n.name}
-                    </h3>
-                    <div className="description">
-                        <p>
-                        {(
-                            n.info.map((d) => d.description)
-                        )}
-                        </p>
-                        <details className="dropdown">
-                            <summary>Fragrance Suggestions</summary>
-                            <ul className="menu dropdown-content">
-                                <li>
-                                    {(
-                                        n.info.map((d) => d.suggestions)
-                                    )}
-                                </li>
-                            </ul>
-                        </details>
-                    </div>
-                </article>
-            </li>
-            ))}
-        </ul>
+        <>
+        <h1>Scent Notes</h1>
+            <ul className="notes-unorderedlist">
+                {notes.map((n) => (
+                <li className="note-lists">
+                    <button onClick={onSaveClick}>
+                        {n.isFavourite}
+                    </button>
+                    <article className="notes-card">
+                        <img 
+                            src={n.image} 
+                            alt={n.name} 
+                        />
+                        <h3 className="note-name">
+                            {n.name}
+                        </h3>
+                        <div className="description">
+                            <p>
+                            {(
+                                n.info.map((d) => d.description)
+                            )}
+                            </p>
+                            <details className="dropdown">
+                                <summary>Fragrance Suggestions</summary>
+                                <ul className="menu dropdown-content">
+                                    <li>
+                                        {(
+                                            n.info.map((d) => d.suggestions)
+                                        )}
+                                    </li>
+                                </ul>
+                            </details>
+                        </div>
+                    </article>
+                </li>
+                ))}
+            </ul>
+        </>
     );
 }
 
-export default NoteTable;
+export default NoteDisplay;
