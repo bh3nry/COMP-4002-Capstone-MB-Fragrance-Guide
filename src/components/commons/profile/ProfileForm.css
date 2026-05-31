@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    background: #f4efed;
+    border: 1.5px solid rgba(150, 112, 105, 0.18);
+    border-radius: 12px;
+}
+
+.profile-form h2 {
+    font-family: 'Cormorant Upright', serif;
+    font-size: 26px;
+    color: #967069;
+}
+
+.profile-form label {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #92927D;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.profile-input,
+.profile-textarea {
+    width: 100%;
+    border: 1.5px solid rgba(150, 112, 105, 0.18);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    color: #967069;
+    background: #E6E1DF;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.profile-input:focus,
+.profile-textarea:focus {
+    border-color: #F86F6B;
+}
+
+.profile-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.profile-preview {
+    padding: 16px;
+    border: 1.5px dashed rgba(150, 112, 105, 0.18);
+    border-radius: 8px;
+}
+
+.profile-preview h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #92927D;
+    margin-bottom: 8px;
+}
+
+.preview-name {
+    font-family: 'Cormorant Upright', serif;
+    font-size: 26px;
+    color: #967069;
+}
+
+.preview-bio {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    color: #92927D;
+}
