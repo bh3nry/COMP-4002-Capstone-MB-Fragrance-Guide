@@ -1,18 +1,29 @@
-import React, { useState } from "react"
+import React from "react"
+import { useForm } from '../../hooks/useForm';
 
 const Home = (): React.JSX.Element => {
-    
-    const [noteFromUser, setNoteFromUser] = useState<string[]>([]);
+
+    // Assume userNote is state, and setUserNote is the setter
+    const { userNote, setUserNote } = useForm();
+
+    const removeButton = (buttonIndex: number) => {
+        const noteButtons = [...userNote]
+        noteButtons.splice(buttonIndex, 1)
+        setUserNote(noteButtons)
+    }
 
     const getFormData = (formData: FormData): void => {
         const formCollection = String(formData.get("userNotes"))
-        setNoteFromUser(x => [...x, formCollection])
+        setUserNote((prev) => [...prev, formCollection]);
     }
-
-    const noteMap = noteFromUser.map((note, index) => (
-        <li key={index}>
-            {note ? String(note) : ""}
-        </li>
+    const noteMap = userNote.map((note, index) => (
+        <button 
+            className="note-buttons" 
+            key={`${note}-${index}`}
+            onClick={() => removeButton(index)}
+        >
+            {note}
+        </button>
     ))
 
     return (
@@ -30,9 +41,11 @@ const Home = (): React.JSX.Element => {
                 />
                 <button>Add New Note</button>
             </form>
-            <ul> {noteMap} </ul>
+            {noteMap.length > 0 && <p>Click to delete notes!</p>}
+            <ul>{noteMap}</ul>
         </div>
     )
 }
 
 export default Home
+

@@ -4,6 +4,7 @@ import Home from './components/pages/Home'
 import Favourites from './components/pages/Favourites'
 import Profile from './components/pages/Profile'
 import './App.css'
+import { FormProvider } from './hooks/formContext'
 
 
 /**
@@ -19,17 +20,19 @@ import './App.css'
  */
 const App = (): React.JSX.Element => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='profile'>
-            <Route index element={<Profile />} />
-            <Route path="favourites" element={<Favourites />}/>
+    <FormProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path='profile'>
+              <Route index element={<Profile />} />
+              <Route path="favourites" element={<Favourites />}/>
+            </Route>
           </Route>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </FormProvider>
   );
 }
 
