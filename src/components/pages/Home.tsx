@@ -1,4 +1,5 @@
 import React from "react"
+import './home.css'
 import { useForm } from '../../hooks/useForm';
 
 const Home = (): React.JSX.Element => {
@@ -27,22 +28,24 @@ const Home = (): React.JSX.Element => {
     ))
 
     return (
-        <div>
-            <h1>Home page</h1>
+        <div className="homepage-wrapper">
+            <h1>Make your own <br />scent creation</h1>
             <form action={getFormData}>
-                <label htmlFor="userNotes">Notes:</label>
-                <input 
-                    id="userNotes" 
-                    name="userNotes" 
-                    type="text" 
-                    placeholder="Vanilla" 
-                    minLength={3}
-                    required
-                />
-                <button>Add New Note</button>
+                <label htmlFor="userNotes"></label>
+                <div className="notebox">
+                    <input 
+                        id="userNotes" 
+                        name="userNotes" 
+                        type="text" 
+                        placeholder="notes" 
+                        minLength={3}
+                        required
+                    />
+                </div>
+                <button className="new-note-btn">Add New Note</button>
             </form>
-            {noteMap.length > 0 && <p>Click to delete notes!</p>}
             <ul>{noteMap}</ul>
+            {noteMap.length > 0 && <p>Click to delete notes!</p>}
         </div>
     )
 }
