@@ -3,9 +3,9 @@ import Layout from './components/layout/Layout'
 import Home from './components/pages/Home'
 import Favourites from './components/pages/Favourites'
 import Profile from './components/pages/Profile'
+
 import './App.css'
 import { FormProvider } from './hooks/formContext'
-
 
 /**
  * @component App

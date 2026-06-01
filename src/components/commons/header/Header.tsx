@@ -1,5 +1,6 @@
 import './header-style.css'
 import { NavLink } from 'react-router-dom';
+
 import fragrance_img from '../../../assets/fragrance.png'
 function Header() {
     return (
