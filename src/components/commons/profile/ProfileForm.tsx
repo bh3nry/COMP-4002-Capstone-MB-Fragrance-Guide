@@ -21,7 +21,7 @@ function ProfileForm({ profile, setProfile }: ProfileFormProps) {
                     placeholder="Enter your display name"
                     className="profile-input"
                 />
-
+                <br></br>
                 <label htmlFor="bio">Bio</label>
                 <textarea
                     id="bio"
@@ -32,7 +32,7 @@ function ProfileForm({ profile, setProfile }: ProfileFormProps) {
                 />
             </form>
             
-            // Live updates a preview for the profile as info is edited
+            {/* Live updates a preview for the profile as info is edited */}
             <div className="profile-preview">
                 <h3>Preview</h3>
                 <p className="preview-name">{profile.displayName || "Your Name"}</p>
