@@ -22,7 +22,7 @@
     color: #967069;
 }
 
-.scent-tags__label {
+.scent-tags-label {
     font-family: 'Lato', sans-serif;
     font-size: 12px;
     font-weight: 700;
@@ -31,8 +31,8 @@
     color: #92927D;
 }
 
-.scent-tags__available,
-.scent-tags__selected {
+.scent-tags-available,
+.scent-tags-selected {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
@@ -41,7 +41,7 @@
     margin: 0;
 }
 
-.scent-tags__tag {
+.scent-tags-tag {
     background: #E6E1DF;
     border: 1.5px solid #9670692e;
     border-radius: 9999px;
@@ -54,12 +54,12 @@
     transition: all 0.18s;
 }
 
-.scent-tags__tag--selected {
+.scent-tags-tag--selected {
     opacity: 0.4;
     cursor: default;
 }
 
-.scent-tags__tag--active {
+.scent-tags-tag--active {
     background: #F86F6B;
     border-color: #F86F6B;
     color: #fff;

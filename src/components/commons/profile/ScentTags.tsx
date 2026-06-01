@@ -27,16 +27,16 @@ function ScentTags({ selectedTags, setSelectedTags }: ScentTagsProps) {
         <section className="scent-tags">
             <h2>Scent Personality</h2>
 
-            <p className="scent-tags__label">Select your scent tags</p>
+            <p className="scent-tags-label">Select your scent tags</p>
 
             {/* predefined tags the user can click to add */}
-            <ul className="scent-tags__available">
+            <ul className="scent-tags-available">
                 {availableTags.map((tag) => (
                     <li key={tag.id}>
                         <button
                             type="button"
                             onClick={() => handleAdd(tag)}
-                            className={`scent-tags__tag ${selectedTags.find((t) => t.id === tag.id) ? "scent-tags__tag--selected" : ""}`}
+                            className={`scent-tags-tag ${selectedTags.find((t) => t.id === tag.id) ? "scent-tags-tag--selected" : ""}`}
                         >
                             {tag.label}
                         </button>
@@ -44,16 +44,16 @@ function ScentTags({ selectedTags, setSelectedTags }: ScentTagsProps) {
                 ))}
             </ul>
 
-            <p className="scent-tags__label">Your scent personality</p>
+            <p className="scent-tags-label">Your scent personality</p>
 
             {/* selected tags the user can click to remove */}
-            <ul className="scent-tags__selected">
+            <ul className="scent-tags-selected">
                 {selectedTags.map((tag) => (
                     <li key={tag.id}>
                         <button
                             type="button"
                             onClick={() => handleRemove(tag)}
-                            className="scent-tags__tag scent-tags__tag--active"
+                            className="scent-tags-tag scent-tags-tag--active"
                         >
                             {tag.label} ✕
                         </button>
