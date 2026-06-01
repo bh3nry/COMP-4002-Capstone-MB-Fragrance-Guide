@@ -10,7 +10,7 @@ const Profile = (): React.JSX.Element => {
     return (
         <div className="profile-page">
             <h1>My Profile</h1>
-            <div className="profile-page-content">
+            <div className="profile-page__content">
                 <ProfileForm profile={profile} setProfile={setProfile} />
                 <ScentTags selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             </div>

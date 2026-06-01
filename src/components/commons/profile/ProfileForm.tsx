@@ -13,40 +13,40 @@ const ProfileForm = ({ profile, setProfile }: ProfileFormProps): React.JSX.Eleme
         <section className="profile-card">
 
             {/* avatar placeholder */}
-            <div className="profile-card-avatar">
-                <div className="profile-card-avatar-placeholder">
-                    <span className="profile-card-avatar-icon">🐱</span>
+            <div className="profile-card__avatar">
+                <div className="profile-card__avatar-placeholder">
+                    <span className="profile-card__avatar-icon">🐱</span>
                 </div>
             </div>
 
             {/* display name shown above the fields */}
-            <h2 className="profile-card-name">
+            <h2 className="profile-card__name">
                 {profile.displayName || "Your Name"}
             </h2>
-            <p className="profile-card-bio">
+            <p className="profile-card__bio">
                 {profile.bio || "Your bio will appear here."}
             </p>
 
             {/* edit fields */}
-            <div className="profile-card-fields">
-                <div className="profile-card-row">
-                    <span className="profile-card-label">Username</span>
+            <div className="profile-card__fields">
+                <div className="profile-card__row">
+                    <span className="profile-card__label">Username</span>
                     <input
                         type="text"
                         value={profile.displayName}
                         onChange={(e) => setProfile({ ...profile, displayName: e.target.value })}
                         placeholder="Enter your username"
-                        className="profile-card-input"
+                        className="profile-card__input"
                     />
                 </div>
 
-                <div className="profile-card-row">
-                    <span className="profile-card-label">Bio</span>
+                <div className="profile-card__row">
+                    <span className="profile-card__label">Bio</span>
                     <textarea
                         value={profile.bio}
                         onChange={(e) => setProfile({ ...profile, bio: e.target.value })}
                         placeholder="Tell us about yourself"
-                        className="profile-card-textarea"
+                        className="profile-card__textarea"
                     />
                 </div>
             </div>
