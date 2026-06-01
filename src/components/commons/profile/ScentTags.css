@@ -1,11 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
 .scent-tags {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 12px;
     padding: 24px;
     background: #f4efed;
-    border: 1.5px solid rgba(150, 112, 105, 0.18);
+    border: 1.5px solid #9670692e;
     border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .scent-tags h2 {
@@ -35,7 +43,7 @@
 
 .scent-tags__tag {
     background: #E6E1DF;
-    border: 1.5px solid rgba(150, 112, 105, 0.18);
+    border: 1.5px solid #9670692e;
     border-radius: 9999px;
     padding: 8px 16px;
     font-family: 'Lato', sans-serif;
