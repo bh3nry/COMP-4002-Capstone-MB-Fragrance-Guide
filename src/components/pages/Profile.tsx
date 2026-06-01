@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import ProfileForm from "../commons/profile/ProfileForm"
 import ScentTags from "../commons/profile/ScentTags"
 import { useForm } from "../../hooks/useForm"
@@ -6,10 +6,6 @@ import "./Profile.css"
 
 const Profile = (): React.JSX.Element => {
     const { profile, setProfile, selectedTags, setSelectedTags } = useForm();
-
-    useEffect(() => {
-        localStorage.setItem("profile", JSON.stringify(profile));
-    }, [profile]);
 
     return (
         <div className="profile-page">
