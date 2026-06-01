@@ -7,7 +7,7 @@
 }
 
 .homepage-wrapper > h1 {
-    /* min, preffered (based on screen size), max */
+    /* min, preferred (based on screen size), max */
     font-size: clamp(2.8rem, 6vw, 6rem);
     line-height: 0.85;
     align-self: center;
