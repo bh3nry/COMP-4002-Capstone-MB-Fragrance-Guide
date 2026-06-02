@@ -7,14 +7,14 @@
 }
 
 .homepage-wrapper > h1 {
-    /* min, preffered (based on screen size), max */
+    /* min, preferred (based on screen size), max */
     font-size: clamp(2.8rem, 6vw, 6rem);
     line-height: 0.85;
     align-self: center;
     margin: 0;
 }
 
-input {
+.homepage-wrapper input {
     text-align: center;
     align-items: center;
     border-radius: 50px;
@@ -46,7 +46,7 @@ input {
     gap: 0.3rem;
 }
 
-p {
+.homepage-wrapper p {
     font-size: 0.5rem;
     align-self: center;
     padding: 0;
