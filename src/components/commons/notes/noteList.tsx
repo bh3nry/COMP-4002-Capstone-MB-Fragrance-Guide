@@ -21,13 +21,13 @@ function NoteDisplay({
             <ul className="notes-unorderedlist">
                 <li className="note-lists">
                     <article className="notes-card">
-                        <button onClick={onSaveClick}>
+                        <button className="button-notes" onClick={onSaveClick}>
                             {notes.isFavourite ? <FavIcon /> : <RemoveFavIcon />}
                         </button>
-                        {/* <img
+                        <img
                             src={notes.image}
                             alt={notes.name}
-                        /> */}
+                        />
                         <h3 className="note-name">
                             {notes.name}
                         </h3>

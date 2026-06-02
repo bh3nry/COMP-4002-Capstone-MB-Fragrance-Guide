@@ -43,7 +43,7 @@ function Favourites({
     return (
         <>
             <h1>Favourite Scents</h1>
-            <div>
+            <div className="divstyle">
                 {notesListItems}
             </div>
         </>

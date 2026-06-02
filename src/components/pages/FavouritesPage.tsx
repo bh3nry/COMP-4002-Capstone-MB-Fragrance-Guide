@@ -20,7 +20,7 @@ function FavouritesPage({
     const [userFragrance, setUserFragrance] = useState<string>("");
 
     return (
-        <>
+        <div>
             <FragranceForm
                 userFragrance={userFragrance}
                 setUserFragrance={setUserFragrance}
@@ -30,7 +30,7 @@ function FavouritesPage({
                 scents={scents}
                 updateNotes={updateNotes}
             />
-        </>
+        </div>
     );
 }
 
