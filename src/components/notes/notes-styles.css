@@ -1,8 +1,8 @@
-.notes-unorderedlist {
+/* .notes-unorderedlist {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-}
+} */
 
 .note-lists {
     list-style: none;
@@ -74,5 +74,11 @@
     font-size: 10px;
     margin: 0;
 
+}
+
+button {
+    width: 25px;
+    height: 25px;
+    background-color: #ffffff;
 }
 
