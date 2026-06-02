@@ -23,6 +23,7 @@
 .liststyle {
     align-items: center;
     display: flex;
+    gap: 10px;
     list-style-type: none;
     padding-left: 0px;
 }
