@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-const Favourites = () => {
-    return (
-        <div>
-            <p>Favourites</p>
-        </div>
-    )
-}
-
-export default Favourites
-=======
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
 import type { Notes } from "../notes/notes-data";
@@ -46,4 +35,3 @@ function FavouritesPage({
 }
 
 export default FavouritesPage;
->>>>>>> 23605d7 (feat: implemented form that updates the status of your current favourite fragrance.)
