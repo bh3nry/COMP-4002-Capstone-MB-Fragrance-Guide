@@ -2,7 +2,7 @@ import React from "react"
 import ProfileForm from "../commons/profile/ProfileForm"
 import ScentTags from "../commons/profile/ScentTags"
 import { useForm } from "../../hooks/useForm"
-import "./Profile.css"
+import "./profile.css"
 
 const Profile = (): React.JSX.Element => {
     const { userNote, profile, setProfile, selectedTags, setSelectedTags } = useForm();
