@@ -1,23 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Home from './components/pages/Home'
 import Favourites from './components/pages/Favourites'
 import Profile from './components/pages/Profile'
 
-=======
-import ProductCard from './components/ProductCard/ProductCard'
-import { testPerfume } from './components/ProductCard/product-data-test'
-import SearchBar from './components/searchbar/SearchBar' 
-import NoteTable from './components/notes/noteList'
-import { ScentNotes } from './components/notes/notes-data'
-=======
-import Favourites from './components/commons/favourites/Favourite'
->>>>>>> afb8043 (feat: implement favourites functionality and update note display)
-import Header from './components/commons/header/Header'
- 
->>>>>>> 0b54b2d (feat: refactored noteList function to map notes-data object and renamed images in assets for notes.)
 import './App.css'
 import { FormProvider } from './hooks/formContext'
 
@@ -34,7 +20,6 @@ import { FormProvider } from './hooks/formContext'
  */
 const App = (): React.JSX.Element => {
   return (
-<<<<<<< HEAD
     <FormProvider>
       <BrowserRouter>
         <Routes>
@@ -48,12 +33,6 @@ const App = (): React.JSX.Element => {
         </Routes>
       </BrowserRouter>
     </FormProvider>
-=======
-    <>
-      <Header />
-      <Favourites />
-    </>
->>>>>>> 0b54b2d (feat: refactored noteList function to map notes-data object and renamed images in assets for notes.)
   );
 }
 

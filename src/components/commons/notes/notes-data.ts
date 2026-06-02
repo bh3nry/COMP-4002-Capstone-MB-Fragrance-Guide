@@ -13,6 +13,7 @@ export type Info = {
     description: string;
     suggestions: string;
 }
+
 export const ScentNotes: Notes[] = [
     {
     name: "Juniper",
