@@ -1,3 +1,4 @@
+ 
 import './header-style.css'
 import { NavLink } from 'react-router-dom';
 
@@ -22,5 +23,5 @@ function Header() {
         </header>
     );
 }
-
 export default Header;
+ 
