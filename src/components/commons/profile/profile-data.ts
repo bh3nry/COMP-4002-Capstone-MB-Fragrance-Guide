@@ -11,6 +11,7 @@ export type ScentTag = {
 export type ProfileFormProps = {
     profile: ProfileData;
     setProfile: (profile: ProfileData) => void;
+    userNote: string[];
 }
 
 export type ScentTagsProps = {

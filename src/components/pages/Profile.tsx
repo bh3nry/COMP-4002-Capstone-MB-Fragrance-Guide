@@ -5,13 +5,13 @@ import { useForm } from "../../hooks/useForm"
 import "./Profile.css"
 
 const Profile = (): React.JSX.Element => {
-    const { profile, setProfile, selectedTags, setSelectedTags } = useForm();
+    const { userNote, profile, setProfile, selectedTags, setSelectedTags } = useForm();
 
     return (
         <div className="profile-page">
             <h1>My Profile</h1>
             <div className="profile-page__content">
-                <ProfileForm profile={profile} setProfile={setProfile} />
+                <ProfileForm profile={profile} setProfile={setProfile} userNote={userNote} />
                 <ScentTags selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             </div>
         </div>

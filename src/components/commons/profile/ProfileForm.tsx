@@ -6,9 +6,10 @@ import "./ProfileForm.css";
  * Component for displaying and editing a user's profile information.
  * @param profile - the current profile data object containing displayName and bio
  * @param setProfile - setter function to update the profile state in the parent
+ * @param userNote - list of scent notes added from the home page via shared context
  * @returns a JSX element that renders a profile card with editable username and bio
  */
-const ProfileForm = ({ profile, setProfile }: ProfileFormProps): React.JSX.Element => {
+const ProfileForm = ({ profile, setProfile, userNote }: ProfileFormProps): React.JSX.Element => {
     return (
         <section className="profile-card">
 
@@ -50,6 +51,18 @@ const ProfileForm = ({ profile, setProfile }: ProfileFormProps): React.JSX.Eleme
                     />
                 </div>
             </div>
+
+            {/* notes added from the home page via shared context */}
+            {userNote.length > 0 && (
+                <div className="profile-card__notes">
+                    <h3>My Scent Notes</h3>
+                    <ul>
+                        {userNote.map((note, index) => (
+                            <li key={`${note}-${index}`}>{note}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </section>
     );
 }

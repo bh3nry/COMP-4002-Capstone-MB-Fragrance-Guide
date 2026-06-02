@@ -118,3 +118,41 @@
     text-align: center;
     margin: 0;
 }
+
+.profile-card__notes {
+    width: 100%;
+    border: 1.5px solid #9670692e;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 16px 20px;
+}
+
+.profile-card__notes h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #92927D;
+    margin-bottom: 12px;
+}
+
+.profile-card__notes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.profile-card__notes li {
+    background: #E6E1DF;
+    border: 1.5px solid #9670692e;
+    border-radius: 9999px;
+    padding: 6px 14px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #92927D;
+}
