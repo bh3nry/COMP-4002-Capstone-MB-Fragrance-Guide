@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { Notes } from "../notes/notes-data";
-import FragranceForm from "../notes/fragranceForm";
+import type { Notes } from "../commons/notes/notes-data";
+import FragranceForm from "../commons/notes/fragranceForm";
 import Favourites from "../commons/favourites/Favourite";
 
 /**

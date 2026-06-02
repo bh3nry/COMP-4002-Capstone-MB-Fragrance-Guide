@@ -24,10 +24,10 @@ function NoteDisplay({
                         <button onClick={onSaveClick}>
                             {notes.isFavourite ? <FavIcon /> : <RemoveFavIcon />}
                         </button>
-                        <img
+                        {/* <img
                             src={notes.image}
                             alt={notes.name}
-                        />
+                        /> */}
                         <h3 className="note-name">
                             {notes.name}
                         </h3>
