@@ -3,9 +3,6 @@ import Layout from './components/layout/Layout'
 import Home from './components/pages/Home'
 import FavouritesPage from './components/pages/FavouritesPage'
 import Profile from './components/pages/Profile'
-import { ScentNotes } from './components/commons/notes/notes-data'
-import type { Notes } from './components/commons/notes/notes-data'
-import { useState } from 'react'
 import React from 'react'
 
 import './App.css'
@@ -24,8 +21,6 @@ import { FormProvider } from './hooks/formContext'
  */
 const App = (): React.JSX.Element => {
 
-  const [scents, updateNotes] = useState<Notes[]>(ScentNotes);
-
   return (
     <FormProvider>
       <BrowserRouter>
@@ -34,7 +29,7 @@ const App = (): React.JSX.Element => {
             <Route index element={<Home />} />
             <Route path='profile'>
               <Route index element={<Profile />} />
-              <Route path="favourites" element={<FavouritesPage scents={scents} updateNotes={updateNotes}/>}/>
+              <Route path="favourites" element={<FavouritesPage />}/>
             </Route>
           </Route>
         </Routes>

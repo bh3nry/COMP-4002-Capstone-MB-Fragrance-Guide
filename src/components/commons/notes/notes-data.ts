@@ -2,6 +2,11 @@ import Juniper from '../../../assets/notesimg/Juniper.png';
 import Patchouli from '../../../assets/notesimg/Patchouli.png';
 import Sandalwood from '../../../assets/notesimg/Sandalwood.png';
 
+export type NotesTagsProps = {
+    favNotes: Notes[];
+    setFavNotes: (notes: Notes[]) => void;
+}
+
 export type Notes = {
     name: string;
     image: string;

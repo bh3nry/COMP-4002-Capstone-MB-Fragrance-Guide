@@ -1,52 +1,43 @@
-import NoteTable from "../notes/noteList"
-import type { Notes } from "../notes/notes-data"
+import NoteDisplay from "../notes/noteList"
+import type { NotesTagsProps, Notes } from "../notes/notes-data"
 import "./favourite-style.css"
 
 function Favourites({
-    scents,
-    updateNotes
+    favNotes,
+    setFavNotes
     }:
-    {
-        scents: Notes[],
-        updateNotes: React.Dispatch<React.SetStateAction<Notes[]>>
-    }) { 
+    NotesTagsProps) { 
 
     const handleNotesFavouriteClick = (notesClicked: Notes): void => {
-        updateNotes(oldNotesState => {
-            return oldNotesState.map(n => {
-                if(n.name === notesClicked.name) {
-                    let newFavourite = !n.isFavourite;
-                    return {...n, isFavourite: newFavourite};
-                } else {
-                    return n;
-                }
-            })
+        const updatedNotes = favNotes.map((n) => {
+            if (n.name === notesClicked.name) {
+                return { ...n, isFavourite: !n.isFavourite};
+            }
+            return n;
         });
+        setFavNotes(updatedNotes)
     }
 
-    const notesListItems = scents.map((s) => {
+    const notesListItems = favNotes.map((s) => {
         return (
-
-            <NoteTable
+            <NoteDisplay
                 notes={s}
 
                 onSaveClick={() => {
                     handleNotesFavouriteClick(s);
-
                 }}
-
                 key={s.name}
             />
         )
     })
     
     return (
-        <>
+        <section>
             <h1>Favourite Scents</h1>
             <div className="divstyle">
                 {notesListItems}
             </div>
-        </>
+        </section>
     );
 }
 
