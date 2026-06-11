@@ -10,4 +10,4 @@ const findCologne = (userNotes: string[]): Set<Fragrance> => {
     return fragranceSet
 }
 
-export default findCologne
+export { findCologne }

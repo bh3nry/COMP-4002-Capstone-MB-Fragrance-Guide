@@ -2,6 +2,7 @@ import { createContext } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import type { ProfileData, ScentTag } from '../components/commons/profile/profile-data';
 
+
 export type FormContextValue = {
   userNote: string[];
   setUserNote: Dispatch<SetStateAction<string[]>>;
