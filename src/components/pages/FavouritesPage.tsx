@@ -1,6 +1,5 @@
 import { useState } from "react";
-import type { Dispatch, SetStateAction } from "react";
-import type { Notes } from "../commons/notes/notes-data";
+import { useForm } from "../../hooks/useForm"
 import FragranceForm from "../commons/notes/fragranceForm";
 import Favourites from "../commons/favourites/Favourite";
 
@@ -10,14 +9,9 @@ import Favourites from "../commons/favourites/Favourite";
  * @params updateNotes: a function to update the user's favourite notes
  * @return a JSX element that renders the FragranceForm and Favourites components
  */
-function FavouritesPage({
-    scents,
-    updateNotes
-}: {
-    scents: Notes[];
-    updateNotes: Dispatch<SetStateAction<Notes[]>>;
-}) {
+const FavouritesPage = (): React.JSX.Element => {
     const [userFragrance, setUserFragrance] = useState<string>("");
+    const { favNotes, setFavNotes } = useForm();
 
     return (
         <div>
@@ -27,8 +21,8 @@ function FavouritesPage({
             />
 
             <Favourites
-                scents={scents}
-                updateNotes={updateNotes}
+                favNotes={favNotes}
+                setFavNotes={setFavNotes}
             />
         </div>
     );
