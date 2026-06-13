@@ -1,5 +1,5 @@
-import { fragranceData } from "../apis/scentRepoData";
-import type { Fragrance } from "../apis/scentRepoData";
+import { fragranceData } from "./scentRepoData";
+import type { Fragrance } from "./scentRepoData";
 
 export type RecommendationLocation = {
     id: number;
