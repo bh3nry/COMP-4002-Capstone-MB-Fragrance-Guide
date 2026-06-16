@@ -1,5 +1,5 @@
-import { recommendationData } from "./recRepoData";
-import type { RecommendationLocation } from "./recRepoData";
+import { recommendationData } from "./locRepoData";
+import type { RecommendationLocation } from "./locRepoData";
 
 export const RecommendationRepository = {
 
