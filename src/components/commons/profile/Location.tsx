@@ -1,8 +1,8 @@
 import React from "react";
 import { useReco } from "../../../hooks/useReco";
-import { useRecommendations } from "../../../hooks/useRecommendation";
+import { useRecommendations } from "../../../hooks/useLocation";
 import type { Fragrance } from "../../../apis/scentRepoData";
-import "./recommendation.css";
+import "./location.css";
 
 /**
  * Component for displaying fragrance recommendations on the profile page.
