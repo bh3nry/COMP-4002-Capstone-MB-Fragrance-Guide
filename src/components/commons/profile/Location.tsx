@@ -18,7 +18,7 @@ const Recommendations = ({ userNote }: { userNote: string[] }): React.JSX.Elemen
     // filters fragrances by notes via ScentService and ScentRepo
     const { recommendations } = useReco(userNote);
 
-    // gets all sale location data via the service and reposistory
+    // gets all sale location data via the service and repository
     const locationData = useRecommendations();
 
     return (
