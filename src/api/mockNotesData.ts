@@ -1,15 +1,15 @@
-import type {Notes} from '../components/commons/notes/notes-data';
+import type { Notes } from '../types/notesType';
 import Juniper from '../assets/notesimg/Juniper.png';
 import Patchouli from '../assets/notesimg/Patchouli.png';
 import Sandalwood from '../assets/notesimg/Sandalwood.png';
 
 
-export const mockSeasonData: Notes[] = [
+export const mockNotesData: Notes[] = [
     {
     id: 1,
     name: "Juniper",
     image: Juniper,
-    isFavourite: false,
+    isFavourite: true,
     info: [{
         description: "Sharp, pine-like, gin-like, aromatic, slightly peppery.",
         season: "Spring",
@@ -20,7 +20,7 @@ export const mockSeasonData: Notes[] = [
     id: 2,
     name: "Patchouli",
     image: Patchouli,
-    isFavourite: false,
+    isFavourite: true,
     info: [{
         description: "Sweet, dark, with an earthy, woody edge, it is very popular in many blends, especially the contemporary woody floral musks.",
         season: "Winter",

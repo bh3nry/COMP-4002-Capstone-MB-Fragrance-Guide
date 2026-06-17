@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Home from './components/pages/Home'
+import Notes from './components/pages/Notes'
 import FavouritesPage from './components/pages/FavouritesPage'
 import Profile from './components/pages/Profile'
 import React from 'react'
@@ -27,6 +28,7 @@ const App = (): React.JSX.Element => {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path='notes' element={<Notes />} />
             <Route path='profile'>
               <Route index element={<Profile />} />
               <Route path="favourites" element={<FavouritesPage />}/>

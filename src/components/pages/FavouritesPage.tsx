@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { useForm } from "../../hooks/useForm"
+import { useCallback } from "react";
+import { useFavouriteNotes } from "../../hooks/useFavouriteNotes";
+import { useForm } from "../../hooks/useForm";
+import type {Notes} from "../../types/notesType";
 import FragranceForm from "../commons/notes/fragranceForm";
 import Favourites from "../commons/favourites/Favourite";
 
@@ -10,19 +12,23 @@ import Favourites from "../commons/favourites/Favourite";
  * @return a JSX element that renders the FragranceForm and Favourites components
  */
 const FavouritesPage = (): React.JSX.Element => {
-    const [userFragrance, setUserFragrance] = useState<string>("");
-    const { favNotes, setFavNotes } = useForm();
+    
+    const filterFav = useCallback((note: Notes) => note.isFavourite, []);
+    
+    const { favFragrances, setFavFragrances } = useForm();
+    const { favNotes, toggleFavourite } = useFavouriteNotes(filterFav);
 
     return (
         <div>
             <FragranceForm
-                userFragrance={userFragrance}
-                setUserFragrance={setUserFragrance}
+                favFragrances={favFragrances}
+                onAddFavouriteFragrance={setFavFragrances}
             />
 
             <Favourites
+                title="Favourite Scents"
                 favNotes={favNotes}
-                setFavNotes={setFavNotes}
+                onToggleFavourite={toggleFavourite}
             />
         </div>
     );

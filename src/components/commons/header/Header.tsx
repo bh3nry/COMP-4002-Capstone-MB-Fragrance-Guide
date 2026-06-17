@@ -16,6 +16,7 @@ function Header() {
             <nav className="topnav">
                 <ul className="liststyle">
                     <NavLink to="/"> Home </NavLink>
+                    <NavLink to="notes"> Notes </NavLink>
                     <NavLink to="profile"> Profile </NavLink>
                     <NavLink to="profile/favourites"> Favourites </NavLink>
                 </ul>
