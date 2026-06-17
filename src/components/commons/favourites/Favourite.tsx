@@ -1,39 +1,29 @@
 import NoteDisplay from "../notes/noteList"
-import type { NotesTagsProps, Notes } from "../notes/notes-data"
+import type { NotesTagsProps } from "../../../types/notesType"
 import "./favourite-style.css"
 
 function Favourites({
+    title,
     favNotes,
-    setFavNotes
+    onToggleFavourite
     }:
     NotesTagsProps) { 
-
-    const handleNotesFavouriteClick = (notesClicked: Notes): void => {
-        const updatedNotes = favNotes.map((n) => {
-            if (n.name === notesClicked.name) {
-                return { ...n, isFavourite: !n.isFavourite};
-            }
-            return n;
-        });
-        setFavNotes(updatedNotes)
-    }
 
     const notesListItems = favNotes.map((s) => {
         return (
             <NoteDisplay
                 notes={s}
-
                 onSaveClick={() => {
-                    handleNotesFavouriteClick(s);
+                    onToggleFavourite(s.id);
                 }}
-                key={s.name}
+                key={s.id}
             />
         )
     })
     
     return (
         <section>
-            <h1>Favourite Scents</h1>
+            <h1>{title}</h1>
             <div className="divstyle">
                 {notesListItems}
             </div>
