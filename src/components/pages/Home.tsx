@@ -1,7 +1,8 @@
 import React from "react"
 import './home.css'
+import ProductCard from "../commons/productcard/ProductCard";
 import { useForm } from '../../hooks/useForm';
-import { useReco } from "../../hooks/useReco";
+import useReco  from "../../hooks/useReco";
 
 const Home = (): React.JSX.Element => {
 
@@ -11,9 +12,15 @@ const Home = (): React.JSX.Element => {
 
     const useFragrances = recommendations.map(
         (item) => 
-        <li className={"reco-list"}>
-            {item.name}
-        </li>)
+            <div className={'reco-list'}>
+                <ProductCard 
+                    title={item.name} 
+                    notes={item.notes.join(' ')} 
+                    price={item.id}
+                />
+            </div>)
+
+        
     
     // A11Y: Generates a unique id if we were to extend this form
     const id = React.useId()
@@ -41,7 +48,7 @@ const Home = (): React.JSX.Element => {
         <div className="homepage-wrapper">
             <h1>Make your own <br />scent creation</h1>
             <form action={getFormData}>
-                <label htmlFor={id + "-userNotes"}></label>
+                <label htmlFor={`${id} -userNotes`}></label>
                 <div className="notebox">
                     <input 
                         id={id + "-userNotes"}

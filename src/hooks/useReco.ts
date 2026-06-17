@@ -10,4 +10,4 @@ const useReco = (userNotes: string[]): { recommendations: Fragrance[] } => {
   return { recommendations };
 };
 
-export { useReco };
+export default useReco;
