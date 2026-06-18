@@ -7,7 +7,7 @@ export type Perfume = {
 export type ProductCardProps = {
     title: string
     notes: string
-    price: string
+    price: number
 }
 
 export const testPerfume: Perfume = {
