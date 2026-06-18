@@ -3,6 +3,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import type { ProfileData, ScentTag } from '../components/commons/profile/profile-data';
 import type { Notes, FavouriteFragrance } from '../types/notesType';
 
+
 export type FormContextValue = {
   userNote: string[];
   setUserNote: Dispatch<SetStateAction<string[]>>;

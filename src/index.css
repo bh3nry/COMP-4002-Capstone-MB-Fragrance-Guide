@@ -1,7 +1,7 @@
 :root {
   --text: #967069;
   --text-h: #967069;
-  --bg: #E6E1DF;
+  --bg: #f1efee;
   --border: rgba(150, 112, 105, 0.18);
   --code-bg: #f4efed;
   --accent: #F86F6B;
@@ -15,7 +15,10 @@
   --mono: ui-monospace, Consolas, monospace;
 
   font: 16px/145% var(--sans);
+
+  font: 16px/145% var(--sans);
   letter-spacing: 0.18px;
+  color-scheme: light;
   color-scheme: light;
   color: var(--text);
   background: var(--bg);
@@ -23,6 +26,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 
   @media (max-width: 1024px) {
     font-size: 16px;
@@ -49,28 +53,36 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 400;
+  font-weight: 400;
   color: var(--text-h);
 }
 
 h1 {
   font-size: 32px;
   letter-spacing: -0.5px;
+  font-size: 32px;
+  letter-spacing: -0.5px;
   margin: 32px 0;
   @media (max-width: 1024px) {
+    font-size: 28px;
     font-size: 28px;
     margin: 20px 0;
   }
 }
 
+
 h2 {
+  font-size: 26px;
   font-size: 26px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
   @media (max-width: 1024px) {
     font-size: 22px;
+    font-size: 22px;
   }
 }
+
 
 p {
   margin: 0;
