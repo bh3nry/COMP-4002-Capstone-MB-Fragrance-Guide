@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import type { ProfileData, ScentTag } from '../components/commons/profile/profile-data';
+import type { Notes, FavouriteFragrance } from '../types/notesType';
 
 export type FormContextValue = {
   userNote: string[];
@@ -9,6 +10,10 @@ export type FormContextValue = {
   setProfile: Dispatch<SetStateAction<ProfileData>>;
   selectedTags: ScentTag[];
   setSelectedTags: Dispatch<SetStateAction<ScentTag[]>>;
+  favNotes: Notes[];
+  setFavNotes: Dispatch<SetStateAction<Notes[]>>;
+  favFragrances: FavouriteFragrance[];
+  setFavFragrances: Dispatch<SetStateAction<FavouriteFragrance[]>>;
 };
 
 // Context contains the state value & setter method in formContext.tsx
