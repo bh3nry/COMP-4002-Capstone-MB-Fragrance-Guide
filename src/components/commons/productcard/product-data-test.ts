@@ -5,7 +5,9 @@ export type Perfume = {
 }
 
 export type ProductCardProps = {
-    perfumeObj: Perfume
+    title: string
+    notes: string
+    price: number
 }
 
 export const testPerfume: Perfume = {

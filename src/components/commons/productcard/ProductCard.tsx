@@ -9,7 +9,7 @@ import './product-card.css'
  * @param props.perfumeObj - The perfume product data to display.
  * @returns A product card containing the perfume image, title, notes, and price.
  */
-const ProductCard = ({ title, notes, price }) => {
+const ProductCard = ({ title, notes, price }: ProductCardProps) => {
 
     const productNameFormatting = (scentName: string) => {
         return scentName.toUpperCase()
