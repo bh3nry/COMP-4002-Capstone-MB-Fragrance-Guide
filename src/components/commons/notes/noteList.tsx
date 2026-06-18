@@ -1,4 +1,4 @@
-import type { Notes } from "./notes-data";
+import type { Notes } from "../../../types/notesType";
 import FavIcon from "../../../assets/heart-icon-favourite";
 import RemoveFavIcon from "../../../assets/heart-icon-unfavourite";
 import "./notes-styles.css";
