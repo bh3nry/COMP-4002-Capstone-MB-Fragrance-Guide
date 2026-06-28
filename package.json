@@ -1,0 +1,32 @@
+{
+  "name": "comp-4002-capstone-mb-fragrance-guide",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:frontend": "npm run dev --workspace=@smellgood/frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bh3nry/COMP-4002-Capstone-MB-Fragrance-Guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bh3nry/COMP-4002-Capstone-MB-Fragrance-Guide/issues"
+  },
+  "homepage": "https://github.com/bh3nry/COMP-4002-Capstone-MB-Fragrance-Guide#readme",
+  "workspaces": [
+    "app/*"
+  ],
+  "dependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
