@@ -6,10 +6,10 @@ import cors from "cors";
 dotenv.config({ path: './.env' });
 
 // Add local import statements here
+import corsOptions from "../config/cors.ts";
 import scentRouter from './api/v1/routes/scentRoutes.ts';
-import corsOptions from "../config/cors";
 
-const app: Express = express();
+const app: Express = express()
 
 // Middleware
 app.use(express.json())

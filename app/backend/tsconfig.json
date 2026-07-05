@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "nodenext",
     "target": "ESNext",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "nodenext",
     "types": [],
     "esModuleInterop": true,
     "ignoreDeprecations": "6.0",
