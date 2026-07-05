@@ -8,14 +8,13 @@ dotenv.config({ path: './.env' });
 // Add local import statements here
 import corsOptions from "../config/cors.ts";
 import scentRouter from './api/v1/routes/scentRoutes.ts';
-import profileRoutes from "./api/v1/routes/profileRoutes.ts";
-import locationRoutes from "./api/v1/routes/locationRoutes.ts";
 
 const app: Express = express()
 
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json())
+app.use(cors(corsOptions));
 
 // Health Check
 app.get('/', (_req: Request, res: Response) => {
