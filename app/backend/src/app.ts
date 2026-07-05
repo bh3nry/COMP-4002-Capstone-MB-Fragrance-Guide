@@ -24,3 +24,4 @@ app.get('/', (_req: Request, res: Response) => {
 app.use("/api/v1", scentRouter)
 
 export default app;
+
