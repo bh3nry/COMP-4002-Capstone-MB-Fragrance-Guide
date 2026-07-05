@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import app from "./app.ts"
 
 // get the server object from the http module
 import { Server } from "http";
+=======
+import { Server } from "http";
+import app from "./app.ts";
+>>>>>>> 4cb3b3a (feat: updating branch to coincide with dev)
 
 // get port number from the .env file
 const PORT: string | 3000 = process.env.PORT || 3000;
