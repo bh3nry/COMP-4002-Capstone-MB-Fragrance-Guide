@@ -16,6 +16,7 @@ const app: Express = express()
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json())
+app.use(cors(corsOptions));
 
 // Health Check
 app.get('/', (_req: Request, res: Response) => {
