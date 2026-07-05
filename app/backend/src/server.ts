@@ -1,4 +1,4 @@
-import app from "./app.js";
+import app from "./app.ts"
 
 // get the server object from the http module
 import { Server } from "http";
