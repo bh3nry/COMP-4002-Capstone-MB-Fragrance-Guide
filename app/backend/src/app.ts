@@ -27,3 +27,4 @@ app.use("/profile", profileRoutes);
 app.use("/locations", locationRoutes);
  
 export default app;
+
