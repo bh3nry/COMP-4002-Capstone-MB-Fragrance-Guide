@@ -26,16 +26,15 @@ model Note {
   season      String
   suggestions String
 }
-
 model Profile {
   id          Int    @id @default(autoincrement())
   displayName String
   bio         String
 }
-
 model SaleLocation {
   id         Int      @id @default(autoincrement())
   name       String
   locationId Int
   Location   Location @relation(fields: [locationId], references: [id])
 }
+
