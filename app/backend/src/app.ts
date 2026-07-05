@@ -14,8 +14,13 @@ import locationRoutes from "./api/v1/routes/locationRoutes.ts";
 const app: Express = express()
 
 // Middleware
-app.use(express.json())
 app.use(cors(corsOptions));
+app.use(express.json())
+
+// Health Check
+app.get('/', (_req: Request, res: Response) => {
+  res.send('Health Check, everything good?');
+});
 
 // Health Check
 app.get('/', (_req: Request, res: Response) => {
