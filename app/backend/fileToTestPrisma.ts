@@ -1,4 +1,4 @@
-import { prisma } from "./prisma/prisma";
+import { prisma } from "./prisma/prisma.js";
 
 // Feel free to test via: npx tsx script.ts
 

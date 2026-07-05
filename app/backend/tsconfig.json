@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ES2023",
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "target": "ESNext",
+    "moduleResolution": "NodeNext",
     "types": [],
     "esModuleInterop": true,
     "ignoreDeprecations": "6.0",
@@ -16,7 +16,10 @@
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
+    "noEmit": true,
+    "rewriteRelativeImportExtensions": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
+    "erasableSyntaxOnly": true,
   }
 }
