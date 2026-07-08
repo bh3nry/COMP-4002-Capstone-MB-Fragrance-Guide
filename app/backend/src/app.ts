@@ -8,6 +8,7 @@ dotenv.config({ path: './.env' });
 // Add local import statements here
 import corsOptions from "../config/cors.ts";
 import scentRouter from './api/v1/routes/scentRoutes.ts';
+import profileRoutes from "./api/v1/routes/profileRoutes.ts";
 
 const app: Express = express()
 
@@ -22,6 +23,7 @@ app.get('/', (_req: Request, res: Response) => {
 
 // Routes
 app.use("/api/v1", scentRouter)
-
+app.use("/profile", profileRoutes);
+ 
 export default app;
 
