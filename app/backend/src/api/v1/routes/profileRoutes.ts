@@ -1,12 +1,12 @@
 import { Router } from "express";
 import { getProfile, updateProfile } from "../controllers/profileController";
 
-const router = Router();
+const profileRouter = Router();
 
 // GET, returns the current profile
-router.get("/", getProfile);
+profileRouter.get("/", getProfile);
 
 // PUT, updates the profile
-router.put("/", updateProfile);
+profileRouter.put("/", updateProfile);
 
-export default router;
+export default profileRouter;
