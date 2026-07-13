@@ -1,6 +1,6 @@
 import React from "react";
 import useReco from "../../../hooks/useReco";
-import { useRecommendations } from "../../../hooks/useLocation";
+import { useLocation } from "../../../hooks/useLocation";
 import type { Fragrance } from "../../../apis/scentRepoData";
 import "./location.css";
 
@@ -19,7 +19,7 @@ const Recommendations = ({ userNote }: { userNote: string[] }): React.JSX.Elemen
     const { recommendations } = useReco(userNote);
 
     // gets all sale location data via the service and repository
-    const locationData = useRecommendations();
+    const locationData = useLocation();
 
     return (
         <section className="recommendations">
@@ -48,7 +48,7 @@ const Recommendations = ({ userNote }: { userNote: string[] }): React.JSX.Elemen
                             <h3 className="recommendations__name">{rec.name}</h3>
                             {location && (
                                 <ul className="recommendations__locations">
-                                    {location.saleLocations.map((l) => (
+                                    {location.saleLocations.map((l: string) => (
                                         <li key={l} className="recommendations__location">{l}</li>
                                     ))}
                                 </ul>

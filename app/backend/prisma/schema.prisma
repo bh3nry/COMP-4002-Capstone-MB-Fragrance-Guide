@@ -35,3 +35,12 @@ model SaleLocation {
   locationId Int
   location   Location @relation(fields: [locationId], references: [id])
 }
+
+// note table, feel free to change?
+model Note {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
+  season      String
+  suggestions String
+}
