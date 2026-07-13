@@ -1,42 +1,34 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client-js"
+  output   = "../generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
-// fragrance table (can remove? for my test purpose only)
-model Fragrance {
-  id          Int          @id @default(autoincrement())
-  name        String
-  notes       Note[]
-  location    Location?
+// yoinked from Bren's branch
+model Scents {
+  id    Int      @id @default(autoincrement())
+  Name  String   @unique
+  Notes String[]
 }
 
-// note table (can remove? for my test purpose only)
-model Note {
-  id          Int       @id @default(autoincrement())
-  value       String
-  fragranceId Int
-  fragrance   Fragrance @relation(fields: [fragranceId], references: [id])
+// profile table
+model Profile {
+  id          Int    @id @default(autoincrement())
+  displayName String
+  bio         String
 }
 
 // location table
 model Location {
   id            Int            @id @default(autoincrement())
   fragranceId   Int            @unique
-  fragrance     Fragrance      @relation(fields: [fragranceId], references: [id])
   saleLocations SaleLocation[]
 }
 
-// salelocation
+// salelocation table
 model SaleLocation {
   id         Int      @id @default(autoincrement())
   name       String
