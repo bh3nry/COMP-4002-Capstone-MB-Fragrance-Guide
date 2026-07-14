@@ -12,3 +12,30 @@ model Scents {
   Name  String   @unique
   Notes String[]
 }
+
+model Location {
+  id           Int            @id @default(autoincrement())
+  fragranceId  Int            @unique
+  SaleLocation SaleLocation[]
+}
+
+model Note {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
+  season      String
+  suggestions String
+}
+
+model Profile {
+  id          Int    @id @default(autoincrement())
+  displayName String
+  bio         String
+}
+
+model SaleLocation {
+  id         Int      @id @default(autoincrement())
+  name       String
+  locationId Int
+  Location   Location @relation(fields: [locationId], references: [id])
+}
