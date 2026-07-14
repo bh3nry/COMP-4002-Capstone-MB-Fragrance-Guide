@@ -37,4 +37,3 @@ model SaleLocation {
   locationId Int
   Location   Location @relation(fields: [locationId], references: [id])
 }
-
