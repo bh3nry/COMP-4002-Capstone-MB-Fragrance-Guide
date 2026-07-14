@@ -23,11 +23,6 @@ app.get('/', (_req: Request, res: Response) => {
   res.send('Health Check, everything good?');
 });
 
-// Health Check
-app.get('/', (_req: Request, res: Response) => {
-  res.send('Health Check, everything good?');
-});
-
 // Routes
 app.use("/api/v1", scentRouter)
 app.use("/profile", profileRoutes);
