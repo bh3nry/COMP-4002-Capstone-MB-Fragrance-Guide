@@ -1,7 +1,7 @@
 import React from "react";
 import useReco from "../../../hooks/useReco";
 import { useLocation } from "../../../hooks/useLocation";
-import type { Fragrance } from "../../../apis/scentRepoData";
+import type { Fragrance } from "../../../apis/scentRepo";
 import "./location.css";
 
 /**
@@ -45,7 +45,7 @@ const Recommendations = ({ userNote }: { userNote: string[] }): React.JSX.Elemen
 
                     return (
                         <li key={rec.id} className="recommendations__item">
-                            <h3 className="recommendations__name">{rec.name}</h3>
+                            <h3 className="recommendations__name">{rec.Name}</h3>
                             {location && (
                                 <ul className="recommendations__locations">
                                     {location.saleLocations.map((l: string) => (
