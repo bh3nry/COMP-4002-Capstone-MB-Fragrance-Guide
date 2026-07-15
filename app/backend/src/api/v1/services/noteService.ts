@@ -1,11 +1,11 @@
-import prisma from "../../../../prisma/client";
-import { Notes } from "@prisma/client";
+import { prisma } from "../../../../prisma/prisma";
 
-export const getAllNotes = async(): Promise<Notes[]> => {
+
+export const getAllNotes = async() => {
     return prisma.notes.findMany();
 };
 
-export const getNotesById = async(id: number): Promise<Notes | null> => {
+export const getNotesById = async(id: number) => {
     try {
         const note = await prisma.notes.findUnique({
             where: {

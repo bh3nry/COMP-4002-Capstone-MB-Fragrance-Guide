@@ -425,7 +425,7 @@ async function main() {
 
     for (const note of notes) {
         await prisma.note.upsert({
-            where: { name: note.name },
+            where: { id: note.id },
             update: {},
             create: note,
         });

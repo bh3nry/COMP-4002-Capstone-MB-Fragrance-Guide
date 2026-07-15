@@ -3,8 +3,8 @@ import * as noteController from "../controllers/noteController";
 
 const router: Router = express.Router();
 
-router.get("/notes", noteController.getAllNotes)
+router.get("/", noteController.getAllNotes)
 
-router.get("/notes/:id", noteController.getNoteById)
+router.get("/:id", noteController.getNoteById)
 
 export default router;

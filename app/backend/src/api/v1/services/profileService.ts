@@ -1,4 +1,4 @@
-import { prisma } from "../../../../prisma/prisma";
+import { prisma } from "../../../../prisma/prisma.js";
 
 // returns the first profile from the database
 export const fetchProfile = async () => {
