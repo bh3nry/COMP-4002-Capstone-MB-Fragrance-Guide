@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 import { useForm } from "./useForm";
 import type { Notes } from '../types/notesType'
 import * as notesService from "../services/seasonService";
-import * as NotesRepo from "../api/notesRepo";
+import * as NotesRepo from "../apis/notesRepo";
 
 
 /* * Custom hook for managing favourite fragrance notes

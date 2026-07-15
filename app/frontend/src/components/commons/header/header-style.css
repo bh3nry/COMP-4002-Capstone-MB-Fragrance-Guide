@@ -39,6 +39,6 @@ a {
 }
 
 a:hover {
-    color: red;
-    text-decoration: underline;
+    color: rgba(255, 128, 0, 0.344);
+    text-decoration: none;
 }

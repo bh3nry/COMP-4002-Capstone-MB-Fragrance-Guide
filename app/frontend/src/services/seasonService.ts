@@ -1,4 +1,4 @@
-import * as NotesRepo from '../api/notesRepo';
+import * as NotesRepo from '../apis/notesRepo';
 import type { Notes } from "../types/notesType";
 
 /* Service function for managing fragrance notes, including fetching all notes and toggling the favourite status of a note

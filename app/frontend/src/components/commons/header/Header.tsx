@@ -8,10 +8,10 @@ import { SearchBar } from '../searchbar/SearchBar'
 function Header() {
     return (
         <header className="header">
-            <div className="divcss">
+            <NavLink to="/" className="divcss">
                 <img src={fragrance_img} alt="fragrance logo" className='fragimg' />
                 <h1 className="h1header">The Fragrance Group</h1>
-            </div>
+            </NavLink>
             <SearchBar onSearch={(query) => console.log("query:", query)} />
             <nav className="topnav">
                 <ul className="liststyle">
