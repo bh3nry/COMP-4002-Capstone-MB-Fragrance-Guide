@@ -2,12 +2,12 @@ import { prisma } from "../../../../prisma/prisma";
 
 
 export const getAllNotes = async() => {
-    return prisma.notes.findMany();
+    return prisma.note.findMany();
 };
 
 export const getNotesById = async(id: number) => {
     try {
-        const note = await prisma.notes.findUnique({
+        const note = await prisma.note.findUnique({
             where: {
                 id: id
             }
