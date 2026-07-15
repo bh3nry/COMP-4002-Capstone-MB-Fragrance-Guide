@@ -10,6 +10,7 @@ import corsOptions from "../config/cors.ts";
 import scentRouter from './api/v1/routes/scentRoutes.ts';
 import profileRoutes from './api/v1/routes/profileRoutes.ts';
 import locationRoutes from './api/v1/routes/locationRoutes.ts';
+import noteRoutes from './api/v1/routes/noteRoutes.ts';
 
 const app: Express = express()
 
@@ -27,5 +28,6 @@ app.get('/', (_req: Request, res: Response) => {
 app.use("/api/v1", scentRouter)
 app.use("/profile", profileRoutes);
 app.use("/locations", locationRoutes);
+app.use("/notes", noteRoutes)
  
 export default app;
