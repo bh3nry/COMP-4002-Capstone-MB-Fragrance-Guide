@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import { locService } from "../services/locService";
-import type { RecommendationLocation } from "../apis/locRepoData";
 
-export function useLocation(): RecommendationLocation[] {
-    const [locationData, setLocationData] = useState<RecommendationLocation[]>([]);
+type RecLocation = {
+    id: number;
+    fragranceId: number;
+    saleLocations: { id: number; name: string; locationId: number }[];
+}
+
+export function useLocation(): RecLocation[] {
+    const [locationData, setLocationData] = useState<RecLocation[]>([]);
 
     useEffect(() => {
         locService.getAll()
