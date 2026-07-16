@@ -5,7 +5,7 @@ import { useForm } from "../../hooks/useForm"
 import "./profile.css"
 import Recommendations from "../commons/profile/Location"
 
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "http://localhost:3000/api/v1";
 
 const Profile = (): React.JSX.Element => {
     const { userNote, profile, setProfile, selectedTags, setSelectedTags } = useForm();
