@@ -1,15 +1,14 @@
 import React from "react";
 import useReco from "../../../hooks/useReco";
 import { useLocation } from "../../../hooks/useLocation";
-import type { Fragrance } from "../../../apis/scentRepoData";
 import "./location.css";
 
 /**
  * Component for displaying fragrance recommendations on the profile page.
  * Uses useReco to call ScentService.findCologne, which then calls
  * ScentRepo.getAllFragrances to filter the fragrances by their matching notes.
- * useRecommendations calls RecommendationService, which then calls
- * RecommendationRepository.getAll to look up fragrance sale locations
+ * useLocation calls locService, which then calls
+ * locRepo.getAll to look up fragrance sale locations
  * @param userNote array of note strings added on the homepage via shared context
  * @returns a JSX element that renders a list of recommended fragrances with sale locations
  */
@@ -38,21 +37,21 @@ const Recommendations = ({ userNote }: { userNote: string[] }): React.JSX.Elemen
             )}
 
             <ul className="recommendations__list">
-                {recommendations.map((rec: Fragrance) => {
+                {recommendations.map((rec) => {
 
-                    // this will match the filtered fragrance to its sale locations from repository
-                    const location = locationData.find((r) => r.fragrance.id === rec.id);
+                    // this will match the filtered fragrance to its sale locations
+                    const location = locationData.find((r) => r.fragranceId === rec.id);
 
                     return (
                         <li key={rec.id} className="recommendations__item">
                             <h3 className="recommendations__name">{rec.Name}</h3>
-                            {location && (
-                                <ul className="recommendations__locations">
-                                    {location.saleLocations.map((l: string) => (
-                                        <li key={l} className="recommendations__location">{l}</li>
-                                    ))}
-                                </ul>
-                            )}
+                            {location && location.saleLocations && (
+                            <ul className="recommendations__locations">
+                                {location.saleLocations.map((l: { name: string }) => (
+                                    <li key={l.name} className="recommendations__location">{l.name}</li>
+                                ))}
+                            </ul>
+        )}
                         </li>
                     );
                 })}

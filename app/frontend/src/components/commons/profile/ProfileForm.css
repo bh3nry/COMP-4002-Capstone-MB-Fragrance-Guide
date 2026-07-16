@@ -156,3 +156,22 @@
     font-weight: 700;
     color: #92927D;
 }
+
+.profile-card__save {
+    width: 100%;
+    background: #F86F6B;
+    border: none;
+    border-radius: 9999px;
+    padding: 10px 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.profile-card__save:hover {
+    background: #e55a56;
+}
