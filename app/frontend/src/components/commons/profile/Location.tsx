@@ -1,7 +1,7 @@
 import React from "react";
 import useReco from "../../../hooks/useReco";
 import { useLocation } from "../../../hooks/useLocation";
-import type { Fragrance } from "../../../apis/scentRepo";
+import type { Fragrance } from "../../../apis/scentRepoData";
 import "./location.css";
 
 /**

@@ -26,11 +26,22 @@ model Note {
   season      String
   suggestions String
 }
+
+// profile table
 model Profile {
   id          Int    @id @default(autoincrement())
   displayName String
   bio         String
 }
+
+// location table
+model Location {
+  id            Int            @id @default(autoincrement())
+  fragranceId   Int            @unique
+  saleLocations SaleLocation[]
+}
+
+// salelocation table
 model SaleLocation {
   id         Int      @id @default(autoincrement())
   name       String
@@ -38,3 +49,11 @@ model SaleLocation {
   location   Location @relation(fields: [locationId], references: [id])
 }
 
+// note table, feel free to change?
+model Note {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
+  season      String
+  suggestions String
+}
