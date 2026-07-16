@@ -1,4 +1,4 @@
-import { prisma } from "../../../../prisma/prisma";
+import { prisma } from "../../../../prisma/prisma.js";
 
 // returns all locations from the database
 export const fetchAllLocations = async () => {

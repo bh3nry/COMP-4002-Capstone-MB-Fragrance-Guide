@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { FormContext } from './formContextData';
 import type { ProfileData, ScentTag } from '../components/commons/profile/profile-data';
 import type { Notes, FavouriteFragrance } from '../types/notesType';
-import { mockNotesData } from '../api/mockNotesData';
+import { mockNotesData } from '../apis/mockNotesData';
 
 type FormProviderProps = {
   children: ReactNode;

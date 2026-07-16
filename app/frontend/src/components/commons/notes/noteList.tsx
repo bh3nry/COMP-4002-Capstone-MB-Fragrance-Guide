@@ -1,4 +1,5 @@
-import type { Notes } from "../../../types/notesType";
+import type { FrontendNotes as Notes } from '@shared/types/frontend-notes';
+import { Link } from "react-router-dom";
 import FavIcon from "../../../assets/heart-icon-favourite";
 import RemoveFavIcon from "../../../assets/heart-icon-unfavourite";
 import "./notes-styles.css";
@@ -14,43 +15,37 @@ function NoteDisplay({
     onSaveClick
 }: {
     notes: Notes,
-    onSaveClick: () => void
+    onSaveClick?: () => void
 }) {
     return (
         <>
-            <ul className="notes-unorderedlist">
-                <li className="note-lists">
-                    <article className="notes-card">
-                        <button className="button-notes" onClick={onSaveClick}>
-                            {notes.isFavourite ? <FavIcon /> : <RemoveFavIcon />}
-                        </button>
-                        <img
-                            src={notes.image}
-                            alt={notes.name}
-                        />
-                        <h3 className="note-name">
-                            {notes.name}
-                        </h3>
-                        <div className="description">
-                            <p>
+            <Link to={`/notes/${notes.id}`} className="notes-card">
+                {/* <button className="button-notes" onClick={onSaveClick}>
+                    {notes.isFavourite ? <FavIcon /> : <RemoveFavIcon />}
+                </button>
+                <img
+                    src={notes.image}
+                    alt={notes.name}
+                /> */}
+                <h3 className="note-name">
+                    {notes.name}
+                </h3>
+                <div className="description">
+                    <p>
+                        {notes.description}
+                    </p>
+                    {/* <details className="dropdown">
+                        <summary>Fragrance Suggestions</summary>
+                        <ul className="menu dropdown-content">
+                            <li>
                                 {(
-                                    notes.info.map((d) => d.description)
+                                    notes.info.map((d) => d.suggestions)
                                 )}
-                            </p>
-                            <details className="dropdown">
-                                <summary>Fragrance Suggestions</summary>
-                                <ul className="menu dropdown-content">
-                                    <li>
-                                        {(
-                                            notes.info.map((d) => d.suggestions)
-                                        )}
-                                    </li>
-                                </ul>
-                            </details>
-                        </div>
-                    </article>
-                </li>
-            </ul>
+                            </li>
+                        </ul>
+                    </details> */}
+                </div>
+            </Link>
         </>
     );
 }
