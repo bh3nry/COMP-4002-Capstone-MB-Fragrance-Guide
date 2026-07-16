@@ -28,5 +28,6 @@ app.use("/api/v1", scentRouter)
 app.use("/api/v1/profile", profileRoutes);
 app.use("/api/v1/locations", locationRoutes);
 app.use("/api/v1/notes", noteRoutes)
- 
+
+// export default app
 export default app;
