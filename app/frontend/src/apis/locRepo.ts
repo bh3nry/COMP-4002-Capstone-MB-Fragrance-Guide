@@ -1,20 +1,24 @@
-import { recommendationData } from "./locRepoData";
 import type { RecommendationLocation } from "./locRepoData";
 
-export const RecommendationRepository = {
+const BASE_URL = "http://localhost:3000";
 
-    // returns all recommendation location data
-    getAll(): RecommendationLocation[] {
-        return recommendationData;
+export const locRepo = {
+
+    // fetches all locations from the backend
+    getAll: async (): Promise<RecommendationLocation[]> => {
+        const response = await fetch(`${BASE_URL}/locations`);
+        if (!response.ok) {
+            throw new Error("Failed to fetch locations");
+        }
+        return await response.json();
     },
 
-    // returns a single recommendation location by id
-    getById(id: number): RecommendationLocation | undefined {
-        return recommendationData.find((r) => r.id === id);
-    },
-
-    // returns a recommendation location by fragrance id
-    getByFragranceId(id: number): RecommendationLocation | undefined {
-        return recommendationData.find((r) => r.fragrance.id === id);
+    // fetches a single location by id from the backend
+    getById: async (id: number): Promise<RecommendationLocation | undefined> => {
+        const response = await fetch(`${BASE_URL}/locations/${id}`);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch location with id ${id}`);
+        }
+        return await response.json();
     },
 };

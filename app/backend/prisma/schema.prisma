@@ -1,10 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../generated/prisma"
 }
 
@@ -12,18 +7,40 @@ datasource db {
   provider = "postgresql"
 }
 
-// Boilerplate schema
-model User { 
-  id    Int     @id @default(autoincrement()) 
-  email String  @unique
-  name  String?
-  posts Post[]
-} 
-model Post { 
-  id        Int     @id @default(autoincrement()) 
-  title     String
-  content   String?
-  published Boolean @default(false) 
-  author    User    @relation(fields: [authorId], references: [id]) 
-  authorId  Int
-} 
+// yoinked from Bren's branch
+model Scents {
+  id    Int      @id @default(autoincrement())
+  Name  String   @unique
+  Notes String[]
+}
+
+// profile table
+model Profile {
+  id          Int    @id @default(autoincrement())
+  displayName String
+  bio         String
+}
+
+// location table
+model Location {
+  id            Int            @id @default(autoincrement())
+  fragranceId   Int            @unique
+  saleLocations SaleLocation[]
+}
+
+// salelocation table
+model SaleLocation {
+  id         Int      @id @default(autoincrement())
+  name       String
+  locationId Int
+  location   Location @relation(fields: [locationId], references: [id])
+}
+
+// note table, feel free to change?
+model Note {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
+  season      String
+  suggestions String
+}

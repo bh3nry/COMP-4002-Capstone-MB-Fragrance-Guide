@@ -1,15 +1,15 @@
-import { RecommendationRepository } from "../apis/locRepo";
+import { locRepo } from "../apis/locRepo";
 import type { RecommendationLocation } from "../apis/locRepoData";
 
-export const RecommendationService = {
+export const locService = {
 
-    // returns all recommendation location data
-    getAll(): RecommendationLocation[] {
-        return RecommendationRepository.getAll();
+    // returns all location data from the repository
+    getAll: async (): Promise<RecommendationLocation[]> => {
+        return await locRepo.getAll();
     },
 
-    // returns sale locations for a specific fragrance id
-    getByFragranceId(id: number): RecommendationLocation | undefined {
-        return RecommendationRepository.getByFragranceId(id);
+    // returns a location by fragrance id
+    getByFragranceId: async (id: number): Promise<RecommendationLocation | undefined> => {
+        return await locRepo.getById(id);
     },
 };
