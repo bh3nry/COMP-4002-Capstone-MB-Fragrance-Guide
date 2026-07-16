@@ -13,12 +13,6 @@ model Scents {
   Notes String[]
 }
 
-model Location {
-  id           Int           @id @default(autoincrement())
-  fragranceId  Int           @unique
-  saleLocations SaleLocation[]
-}
-
 model Note {
   id          Int    @id @default(autoincrement())
   name        String @unique
@@ -45,13 +39,4 @@ model SaleLocation {
   name       String
   locationId Int
   location   Location @relation(fields: [locationId], references: [id])
-}
-
-// note table, feel free to change?
-model Note {
-  id          Int    @id @default(autoincrement())
-  name        String @unique
-  description String
-  season      String
-  suggestions String
 }

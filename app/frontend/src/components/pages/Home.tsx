@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import './home.css'
 import ProductCard from "../commons/productcard/ProductCard";
 import { useForm } from '../../hooks/useForm';
