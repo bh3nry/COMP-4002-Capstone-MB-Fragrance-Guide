@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import './home.css'
 import ProductCard from "../commons/productcard/ProductCard";
 import { useForm } from '../../hooks/useForm';
@@ -16,14 +16,15 @@ const heroHeaderOptions = [
     "Stop sampling blind. Start smelling smart."
 ]
 
-const heroTextGenerator = () => {
-    const index = (Math.floor(heroHeaderOptions.length 
-        * Math.random()))
-    return heroHeaderOptions[index]
-}
-
 const Home = (): React.JSX.Element => {
 
+    const [heroTextGenerator] = useState(() => {
+        const index = Math.floor(
+            heroHeaderOptions.length 
+            * Math.random())
+            return heroHeaderOptions[index]
+    })
+    
     const { userNote, setUserNote } = useForm();
     const { recommendations, isPending, error } = useReco(userNote);
 
@@ -61,7 +62,7 @@ const Home = (): React.JSX.Element => {
     ))
     return (
         <div className="homepage-wrapper">
-            <h1>{heroTextGenerator()}</h1>
+            <h1>{heroTextGenerator}</h1>
             <form action={getFormData}>
                 <label htmlFor={`${id} -userNotes`}></label>
                 <div className="notebox">
