@@ -1,4 +1,4 @@
-import { useQuery, keepPreviousData } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import * as ScentService from '../services/scentService';
 
 const useReco = (userNotes: string[]) => {
@@ -6,7 +6,7 @@ const useReco = (userNotes: string[]) => {
     { 
       queryKey: ['recommendations', userNotes],
       queryFn: () => ScentService.findCologne(userNotes),
-      placeholderData: keepPreviousData,
+      // placeholderData: keepPreviousData,
       // if there aren't any notes present the fn won't run
       enabled: userNotes.length > 0
     });
