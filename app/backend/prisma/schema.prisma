@@ -14,9 +14,9 @@ model Scents {
 }
 
 model Location {
-  id           Int            @id @default(autoincrement())
-  fragranceId  Int            @unique
-  SaleLocation SaleLocation[]
+  id           Int           @id @default(autoincrement())
+  fragranceId  Int           @unique
+  saleLocations SaleLocation[]
 }
 
 model Note {
