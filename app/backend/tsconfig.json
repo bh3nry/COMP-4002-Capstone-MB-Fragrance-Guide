@@ -3,6 +3,7 @@
     "module": "ESNext",
     "target": "ES2023",
     "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
     "types": [],
     "esModuleInterop": true,
     "ignoreDeprecations": "6.0",
