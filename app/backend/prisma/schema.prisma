@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Scents {
+  id    Int      @id @default(autoincrement())
+  Name  String   @unique
+  Notes String[]
+}
+
+model Note {
+  id          Int    @id @default(autoincrement())
+  name        String @unique
+  description String
+}
+
+// profile table
+model Profile {
+  id          Int    @id @default(autoincrement())
+  displayName String
+  bio         String
+}
+
+// location table
+model Location {
+  id            Int            @id @default(autoincrement())
+  fragranceId   Int            @unique
+  saleLocations SaleLocation[]
+}
+
+// salelocation table
+model SaleLocation {
+  id         Int      @id @default(autoincrement())
+  name       String
+  locationId Int
+  location   Location @relation(fields: [locationId], references: [id])
+}

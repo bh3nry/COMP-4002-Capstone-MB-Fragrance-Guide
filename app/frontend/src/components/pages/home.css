@@ -1,0 +1,65 @@
+.homepage-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 3rem;
+    gap: 1.5rem;
+}
+
+.homepage-wrapper > h1 {
+    /* min, preferred (based on screen size), max */
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    line-height: 0.85;
+    align-self: center;
+    margin: 0;
+}
+
+.homepage-wrapper input {
+    text-align: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    background-color: rgb(247, 244, 244);
+    border: none;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.new-note-btn {
+    align-items: center;
+    margin: 1rem;
+    font-size: 0.7em;
+}
+
+.note-buttons {
+    padding: 0.3rem;
+    margin: 0;
+}
+
+.homepage-wrapper ul {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    margin-top: -1.7rem;
+    padding: 0;
+    flex-wrap: wrap;    
+    gap: 0.3rem;
+}
+
+.homepage-wrapper p {
+    font-size: 0.5rem;
+    align-self: center;
+    padding: 0;
+    width: fit-content;
+}
+
+.reco-list {
+    zoom: 0.6;
+    padding: 10px;
+    animation: fadeIn 800ms;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1;}
+}
+

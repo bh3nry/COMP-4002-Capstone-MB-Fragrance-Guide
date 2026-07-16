@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ES2023",
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "types": [],
+    "esModuleInterop": true,
+    "ignoreDeprecations": "6.0",
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "noEmit": true,
+    "rewriteRelativeImportExtensions": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "erasableSyntaxOnly": true,
+  },
+    "include": ["src/**/*", "tests/**/*"],
+    "exclude": ["node_modules", "dist"]
+}

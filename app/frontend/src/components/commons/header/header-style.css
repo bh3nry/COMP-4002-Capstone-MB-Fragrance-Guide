@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    background-color: #d4c5c5;
+    justify-content: space-between;
+}
+
+.divcss {
+    display: flex;
+    align-items: flex-start;
+}
+
+.fragimg {
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+}
+
+.h1header {
+    font-size: 20px;
+    display: flex;
+}
+
+.liststyle {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.liststyle li {
+    margin: 10px;
+    display: flex;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(255, 128, 0, 0.344);
+    text-decoration: none;
+}
