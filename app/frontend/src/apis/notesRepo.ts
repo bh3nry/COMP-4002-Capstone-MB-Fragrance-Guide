@@ -1,7 +1,7 @@
 import type { FrontendNotes as Notes } from '@shared/types/frontend-notes';
 
-type NotesResponseJSON = {message: String, data: Notes[]};
-type NoteResponseJSON = {message: String, data: Notes};
+type NotesResponseJSON = {message: string, data: Notes[]};
+type NoteResponseJSON = {message: string, data: Notes};
 
 //Repository for maanaging fragrance notes data, including fetching all notes, 
 // fetching a note by ID, and adding/removing notes from favourites 

@@ -15,7 +15,7 @@ export const getAllNotes = async(
             successResponse(notes, "Notes retrieved succesfully")
         );
     } catch (error) {
-        next(error);
+        res.status(500).json({ error: "Failed to fetch notes" });
     }
 };
 
@@ -29,9 +29,9 @@ export const getNoteById = async(
     try {
         const notes = await noteService.getNotesById(id)
         res.status(200).json(
-            successResponse(notes, "Note retireved successfully")
+            successResponse(notes, "Note retrieved successfully")
         );
     } catch (error) {
-        next(error);
+        res.status(404).json({ error: "Note not found" });
     }
 };

@@ -16,9 +16,9 @@ function NoteProfile({
                 </p>
             </div>
             <div>
-                <summary>
+                <h3>
                     Fragrance Suggestions
-                </summary>
+                </h3>
                 <ul>
                     <li>
                         test
