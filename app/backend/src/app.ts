@@ -5,11 +5,6 @@ import cors from "cors";
 // env scoped to the backend
 dotenv.config({ path: './.env' });
 
-import profileRoutes from "./api/v1/routes/profileRoutes";
-import locationRoutes from "./api/v1/routes/locationRoutes";
-
-const app: Express = express();
-
 // Add local import statements here
 import corsOptions from "../config/cors.ts";
 import scentRouter from './api/v1/routes/scentRoutes.ts';
