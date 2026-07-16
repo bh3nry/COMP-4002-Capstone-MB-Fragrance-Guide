@@ -1,45 +1,71 @@
-import { mockNotesData } from "./mockNotesData";
-import type { Notes } from "../types/notesType";
+import type { FrontendNotes as Notes } from '@shared/types/frontend-notes';
+
+type NotesResponseJSON = {message: String, data: Notes[]};
+type NoteResponseJSON = {message: String, data: Notes};
 
 //Repository for maanaging fragrance notes data, including fetching all notes, 
 // fetching a note by ID, and adding/removing notes from favourites 
+const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/v1`;
+const NOTES_ENDPOINT = "/notes"
 
-export function getAllNotes(): Notes[] {
-    return mockNotesData;
-}
+export async function getAllNotes(): Promise<Notes[]> {
+    const noteResponse: Response = await fetch(
+        `${BASE_URL}${NOTES_ENDPOINT}`
+    );
 
-export function getNotesById(seasonID: number): Notes {
-    const findSeason = mockNotesData.find(s => 
-        s.id === seasonID);
-
-    if(!findSeason) {
-        throw new Error(`Failed to fetch season with ${seasonID}`);
+    if(!noteResponse.ok) {
+        throw new Error("Failed to fetch terms");
     }
 
-    return findSeason;
-
+    const json: NotesResponseJSON = await noteResponse.json();
+    return json.data;
 }
 
-export async function addFavouriteNotes(seasonID: number) {
-    const findNotes = mockNotesData.find(s => s.id === seasonID);
+export async function getNotesById(notesId: number): Promise<Notes> {
+    const noteResponse: Response = await fetch(
+        `${BASE_URL}${NOTES_ENDPOINT}/${notesId}`
+    );
 
-    if(!findNotes) {
-        throw new Error(`Failed to fetch notes with ${seasonID}`);
-    } else {
-        findNotes.isFavourite = true;
+    if(!noteResponse.ok) {
+        throw new Error(`Failed to fetch notes with id ${notesId}`);
     }
 
-    return findNotes;
+    const json: NoteResponseJSON = await noteResponse.json();
+    return json.data;
 }
 
-export async function removeFavouriteNotes(seasonID: number) {
-    const findNotes = mockNotesData.find(s => s.id === seasonID);
+// export async function addFavouriteNote(note: Notes) {
+//     note.isFavourite = true;
 
-    if(!findNotes) {
-        throw new Error(`Failed to fetch notes with ${seasonID}`);
-    } else {
-        findNotes.isFavourite = false;
-    }
+//     const updateResponse: Response = await fetch(
+//         `${BASE_URL}${NOTES_ENDPOINT}/${note.id}`,
+//         {
+//             method: "PUT",
+//             body: JSON.stringify({...note}),
+//             headers: {
+//                 "Content-Type": "application/json",
+//             }
+//         }
+//     );
 
-    return findNotes;
-}
+//     const json: NoteResponseJSON = await updateResponse.json();
+//     return json.data;
+// }
+
+// export async function unfavouriteNote(note: Notes) {
+//     note.isFavourite = false;
+
+//     const updateResponse: Response = await fetch(
+//         `${BASE_URL}${NOTES_ENDPOINT}/${note.id}`,
+//         {
+//             method: "PUT",
+//             body: JSON.stringify({...note}),
+//             headers: {
+//                 "Content-Type": "application/json",
+//             }
+//         }
+//     );
+
+//     const json: NoteResponseJSON = await updateResponse.json();
+//     return json.data;
+// }

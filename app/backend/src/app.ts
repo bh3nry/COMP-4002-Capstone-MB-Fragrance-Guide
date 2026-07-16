@@ -25,8 +25,8 @@ app.get('/', (_req: Request, res: Response) => {
 
 // Routes
 app.use("/api/v1", scentRouter)
-app.use("/profile", profileRoutes);
-app.use("/locations", locationRoutes);
-app.use("/notes", noteRoutes)
+app.use("/api/v1/profile", profileRoutes);
+app.use("/api/v1/locations", locationRoutes);
+app.use("/api/v1/notes", noteRoutes)
  
 export default app;
