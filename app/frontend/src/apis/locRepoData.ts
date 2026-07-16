@@ -1,5 +1,5 @@
 import { fragranceData } from "./scentRepoData";
-import type { Fragrance } from "./scentRepoData";
+import type { Fragrance } from "./scentRepo";
 
 export type RecommendationLocation = {
     id: number;

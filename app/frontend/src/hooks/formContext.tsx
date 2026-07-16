@@ -18,14 +18,23 @@ export const FormProvider = ({ children }: FormProviderProps) => {
   });
 
   const [selectedTags, setSelectedTags] = useState<ScentTag[]>([]);
-
   const [favNotes, setFavNotes] = useState<Notes[]>(mockNotesData);
-
   const [favFragrances, setFavFragrances] = useState<FavouriteFragrance[]>([]);
 
-    return (
-        <FormContext.Provider value={{ userNote, setUserNote, profile, setProfile, selectedTags, setSelectedTags, favNotes, setFavNotes, favFragrances, setFavFragrances }}>
-            {children}
-        </FormContext.Provider>
-    );
+  return (
+    <FormContext.Provider value={{ 
+      userNote, 
+      setUserNote, 
+      profile, 
+      setProfile, 
+      selectedTags, 
+      setSelectedTags, 
+      favNotes, 
+      setFavNotes, 
+      favFragrances, 
+      setFavFragrances 
+      }}>
+        {children}
+    </FormContext.Provider>
+  );
 };

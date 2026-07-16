@@ -6,21 +6,18 @@ import useReco  from "../../hooks/useReco";
 
 const Home = (): React.JSX.Element => {
 
-    // Assume userNote is state, and setUserNote is the setter
     const { userNote, setUserNote } = useForm();
-    const { recommendations } = useReco(userNote);
+    const { recommendations, isPending, error } = useReco(userNote);
 
-    const useFragrances = recommendations.map(
-        (item) => 
-            <div className={'reco-list'}>
-                <ProductCard 
-                    title={item.name} 
-                    notes={item.notes.join(' ')} 
+    const useFragrances = recommendations.length > 0 && recommendations.map(
+        (item) =>
+            <div className={'reco-list'} key={item.id}>
+                <ProductCard
+                    title={item.Name}
+                    notes={item.Notes.join(' ')}
                     price={item.id}
                 />
             </div>)
-
-        
     
     // A11Y: Generates a unique id if we were to extend this form
     const id = React.useId()
@@ -63,6 +60,8 @@ const Home = (): React.JSX.Element => {
             </form>
             <ul>{noteMap}</ul>
             {noteMap.length > 0 && <p>Click twice to delete notes!</p>}
+            {isPending && <p>Loading recommendations…</p>}
+            {error && <p>Could not load recommendations.</p>}
             <ul>{useFragrances}</ul>
         </div>
     )

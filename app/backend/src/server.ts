@@ -1,4 +1,4 @@
-import app from "./app";
+import app from "./app.ts"
 
 // get the server object from the http module
 import { Server } from "http";
@@ -11,4 +11,4 @@ const server: Server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-export default server;
+export default server

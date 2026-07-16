@@ -1,13 +1,19 @@
-import type { Fragrance } from "../apis/scentRepoData";
 import * as ScentRepoMethod from "../apis/scentRepo";
 
-const findCologne = (userNotes: string[]): Set<Fragrance> => {
-    const fragranceList: Fragrance[] = ScentRepoMethod.getAllFragrances()
-    const matchedFragrances = fragranceList.filter(fragrance => 
-        userNotes.some(note => fragrance.notes.includes(note))
-    );
-    const fragranceSet = new Set(Object.values(matchedFragrances))
-    return fragranceSet
+const findCologne = async (userNotes: string[]) => {
+    try {
+        const fragranceList = await ScentRepoMethod.getAllFragrances()
+        if (fragranceList) {
+            const matchedFragrances = fragranceList.filter(
+                fragrance => userNotes
+                .some(note => fragrance.Notes
+                .includes(note))
+            );
+            return matchedFragrances
+        }
+    } catch (error: unknown) {
+        console.log(error)
+    }
 }
 
 export { findCologne }
