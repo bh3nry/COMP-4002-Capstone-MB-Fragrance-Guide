@@ -1,6 +1,7 @@
 import express, { type Express, type Request, type Response } from 'express';
 import dotenv from "dotenv";
 import cors from "cors";
+import { clerkMiddleware } from "@clerk/express";
 
 // env scoped to the backend
 dotenv.config({ path: './.env' });
@@ -17,6 +18,9 @@ const app: Express = express()
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json())
+
+// clerk middleware
+app.use(clerkMiddleware());
 
 // Health Check
 app.get('/', (_req: Request, res: Response) => {
