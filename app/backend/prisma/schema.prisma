@@ -24,6 +24,7 @@ model Profile {
   id          Int    @id @default(autoincrement())
   displayName String
   bio         String
+  userProfile UserProfile[]
 }
 
 // location table
@@ -39,4 +40,18 @@ model SaleLocation {
   name       String
   locationId Int
   location   Location @relation(fields: [locationId], references: [id])
+}
+
+model User {
+  id        String @id
+  userProfile UserProfile[]
+}
+
+model UserProfile {
+  user    User @relation(fields:[userId], references: [id])
+  profile Profile @relation(fields:[userProfile], references: [id])
+  userId  String
+  userProfile  Int
+  
+  @@id([userId, userProfile])
 }
