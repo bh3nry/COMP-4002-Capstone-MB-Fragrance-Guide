@@ -4,6 +4,7 @@ import ScentTags from "../commons/profile/ScentTags"
 import { useForm } from "../../hooks/useForm"
 import "./profile.css"
 import Recommendations from "../commons/profile/Location"
+import { SignedIn, SignedOut } from "@clerk/clerk-react"
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -27,11 +28,20 @@ const Profile = (): React.JSX.Element => {
     return (
         <div className="profile-page">
             <h1>My Profile</h1>
+
+            <SignedOut>
+                <p className="profile-page__guest">
+                    Sign in to view your profile.
+                </p>
+            </SignedOut>
+
+            <SignedIn>
             <div className="profile-page__content">
                 <ProfileForm profile={profile} setProfile={setProfile} userNote={userNote} />
                 <Recommendations userNote={userNote} />
                 <ScentTags selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
             </div>
+            </SignedIn>
         </div>
     )
 }
