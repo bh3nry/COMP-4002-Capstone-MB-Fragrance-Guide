@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom';
 import fragrance_img from '../../../assets/fragrance.png'
 import { SearchBar } from '../searchbar/SearchBar'
 
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
+
 function Header() {
     return (
         <header className="header">
@@ -20,6 +22,14 @@ function Header() {
                     <NavLink to="profile"> Profile </NavLink>
                     {/* <NavLink to="profile/favourites"> Favourites </NavLink> */}
                 </ul>
+
+                {/* shows sign in button when logged out, user button when logged in */}
+                <SignedOut>
+                    <SignInButton mode="modal" />
+                </SignedOut>
+                <SignedIn>
+                    <UserButton />
+                </SignedIn>
             </nav>
         </header>
     );
