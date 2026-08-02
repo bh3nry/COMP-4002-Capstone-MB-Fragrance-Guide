@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import type { ProfileFormProps } from "./profile-data";
 import "./ProfileForm.css";
+import { useAuth } from "@clerk/clerk-react";
 
 /**
  * Component for displaying and editing a user's profile information.
@@ -16,12 +17,17 @@ const ProfileForm = ({ profile, setProfile, userNote }: ProfileFormProps): React
     const [saved, setSaved] = useState(false);
 
     const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    const { getToken } = useAuth();
 
-    const handleSave = () => {
+    const handleSave = async () => {
+        const token = await getToken();
         setProfile({ displayName: localDisplayName, bio: localBio });
         fetch(`${BASE_URL}/api/v1/profile`, {
             method: "PUT",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`
+            },
             body: JSON.stringify({ displayName: localDisplayName, bio: localBio }),
         }).catch((error) => console.error("Failed to save profile:", error));
         setSaved(true);
