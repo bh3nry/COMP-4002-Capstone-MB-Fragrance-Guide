@@ -56,3 +56,11 @@ model UserProfile {
 
   @@id([userId, profileId])
 }
+
+model UserTag {
+  id      Int    @id @default(autoincrement())
+  clerkId String
+  tag     String
+
+  @@unique([clerkId, tag])
+}
