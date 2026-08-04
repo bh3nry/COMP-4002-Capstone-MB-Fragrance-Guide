@@ -21,7 +21,8 @@ model Note {
 
 // profile table
 model Profile {
-  id          Int    @id @default(autoincrement())
+  id          Int           @id @default(autoincrement())
+  clerkId     String        @unique
   displayName String
   bio         String
   userProfile UserProfile[]
@@ -43,15 +44,23 @@ model SaleLocation {
 }
 
 model User {
-  id        String @id
+  id          String        @id
   userProfile UserProfile[]
 }
 
 model UserProfile {
-  user    User @relation(fields:[userId], references: [id])
-  profile Profile @relation(fields:[userProfile], references: [id])
-  userId  String
-  userProfile  Int
-  
-  @@id([userId, userProfile])
+  user        User    @relation(fields: [userId], references: [id])
+  profile     Profile @relation(fields: [profileId], references: [id])
+  userId      String
+  profileId   Int
+
+  @@id([userId, profileId])
+}
+
+model UserTag {
+  id      Int    @id @default(autoincrement())
+  clerkId String
+  tag     String
+
+  @@unique([clerkId, tag])
 }
