@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ProtectedRoutes from './components/commons/auth/ProtectedRoutes'
 import Layout from './components/layout/Layout'
 import Home from './components/pages/Home'
 import Notes from './components/pages/NotesList'
@@ -29,9 +30,11 @@ const App = (): React.JSX.Element => {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path='notes' element={<Notes />} />
-            <Route path='notes/:noteId' element={<NoteProfilePage />} />
-            <Route path='profile'>
+              <Route element={<ProtectedRoutes />}>
+               <Route path='notes' element={<Notes />} />
+                <Route path='notes/:noteId' element={<NoteProfilePage />} />
+              </Route> 
+              <Route path='profile'>
               <Route index element={<Profile />} />
               {/* <Route path="favourites" element={<FavouritesPage />}/> */}
             </Route>

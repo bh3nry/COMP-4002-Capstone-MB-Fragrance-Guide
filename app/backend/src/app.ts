@@ -1,7 +1,8 @@
 import express, { type Express, type Request, type Response } from 'express';
 import dotenv from "dotenv";
 import cors from "cors";
-import { clerkMiddleware } from "@clerk/express";
+import { clerkMiddleware, getAuth } from "@clerk/express";
+
 
 // env scoped to the backend
 dotenv.config({ path: './.env' });
@@ -20,6 +21,9 @@ const app: Express = express()
 app.use(cors(corsOptions));
 app.use(express.json())
 
+//  Above backend middleware so that guests can interact with the home page.
+app.use("/api/v1", scentRouter)
+
 // clerk middleware
 app.use(clerkMiddleware());
 
@@ -29,7 +33,6 @@ app.get('/', (_req: Request, res: Response) => {
 });
 
 // Routes
-app.use("/api/v1", scentRouter)
 app.use("/api/v1/profile", profileRoutes);
 app.use("/api/v1/locations", locationRoutes);
 app.use("/api/v1/notes", noteRoutes)

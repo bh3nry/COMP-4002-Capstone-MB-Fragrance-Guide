@@ -7,6 +7,7 @@ import SearchInput from "../commons/notes/noteSearch"
 import "./notes.css";
 
 const NotesPage = (): React.JSX.Element => {
+
     const { notes } = useNotes();
     const {
         searchValue,

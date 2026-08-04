@@ -1,15 +1,15 @@
- 
 import './header-style.css'
 import { NavLink, useLocation } from 'react-router-dom';
-
 import fragrance_img from '../../../assets/fragrance.png'
 import { SearchBar } from '../searchbar/SearchBar'
-
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
+import { useForm } from '../../../hooks/useForm';
 
 function Header() {
+
+    const { outOfTries } = useForm();
     const location = useLocation()
-    console.log(location)
+
     return (
         <header className="header">
             <NavLink to="/" className="divcss">
@@ -27,16 +27,19 @@ function Header() {
                     <NavLink to="/"> Home </NavLink>
                     <NavLink to="notes"> Notes </NavLink>
                     <NavLink to="profile"> Profile </NavLink>
-                    {/* <NavLink to="profile/favourites"> Favourites </NavLink> */}
                 </ul>
 
                 {/* shows sign in button when logged out, user button when logged in */}
-                <SignedOut>
-                    <SignInButton mode="modal" />
-                </SignedOut>
-                <SignedIn>
-                    <UserButton />
-                </SignedIn>
+                {!outOfTries &&
+                <>
+                    <SignedOut>
+                        <SignInButton mode="modal" />
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                </> 
+                }
             </nav>
         </header>
     );
