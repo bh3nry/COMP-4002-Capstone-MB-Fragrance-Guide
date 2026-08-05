@@ -1,9 +1,9 @@
 export interface ApiResponse<T> {
     status: string; // "success" or "error"
-    data?: T; // optional data returned in case of success
-    message?: string; // information about result
+    data?: T | undefined; // optional data returned in case of success
+    message?: string | undefined; // information about result
     error?: string; // optional error message
-    code?: string // optional error code
+    code?: string | undefined // optional error code
 };
 
 // helper functions to easily manufacture different response options
@@ -18,7 +18,7 @@ export const successResponse = <T>(
 
 export const errorResponse = (
     message: string,
-    code?: string
+    code?: string | undefined
 ): ApiResponse<null> => ({
     status: "error",
     message,
