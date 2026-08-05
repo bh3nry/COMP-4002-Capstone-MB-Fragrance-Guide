@@ -43,11 +43,11 @@ const Profile = (): React.JSX.Element => {
             </SignedOut>
 
             <SignedIn>
-            <div className="profile-page__content">
-                <ProfileForm profile={profile} setProfile={setProfile} userNote={userNote} />
-                <Recommendations userNote={userNote} />
-                <ScentTags selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
-            </div>
+                <div className="profile-page__content">
+                    <ProfileForm profile={profile} setProfile={setProfile} userNote={userNote} />
+                    <Recommendations userNote={userNote} />
+                    <ScentTags selectedTags={selectedTags} setSelectedTags={setSelectedTags} />
+                </div>
             </SignedIn>
         </div>
     )

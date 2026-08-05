@@ -23,23 +23,17 @@
     gap: 8px;
 }
 
-.profile-card__avatar-placeholder {
+.profile-card__avatar-image {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background: #E6E1DF !important;
-    border: 2px solid #96706933 !important;
-    box-shadow: none !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
+    border: 2px solid #96706933;
 }
 
-.profile-card__avatar-icon {
-    font-size: 36px;
-    opacity: 1;
-    background: none;
-    box-shadow: none;
+.profile-card__avatar-trigger {
+    border: 2px solid #96706933;
+    border-radius: 50%;
 }
 
 /* display name displayed above fields */

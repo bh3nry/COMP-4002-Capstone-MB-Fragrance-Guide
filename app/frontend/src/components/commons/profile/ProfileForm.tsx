@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import type { ProfileFormProps } from "./profile-data";
 import "./ProfileForm.css";
-import { useAuth } from "@clerk/clerk-react";
+import { useAuth, UserButton } from "@clerk/clerk-react";
 
 /**
  * Component for displaying and editing a user's profile information.
@@ -40,9 +40,14 @@ const ProfileForm = ({ profile, setProfile, userNote }: ProfileFormProps): React
         <section className="profile-card">
 
             <div className="profile-card__avatar">
-                <div className="profile-card__avatar-placeholder">
-                    <span className="profile-card__avatar-icon">🐱</span>
-                </div>
+                <UserButton
+                    appearance={{
+                        elements: {
+                        avatarBox: "profile-card__avatar-image",
+                        userButtonTrigger: "profile-card__avatar-trigger"
+                        }
+                    }}
+                />
             </div>
 
             <h2 className="profile-card__name">
