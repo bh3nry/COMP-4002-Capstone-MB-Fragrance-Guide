@@ -16,7 +16,7 @@ const NotesPage = (): React.JSX.Element => {
     } = useSearchNotes();
 
     const [searchMessages, setSearchMessages] = useState<string[]>([]);
-    const [setSearchLength] = useState(0);
+    const [, setSearchLength] = useState(0);
 
     const noteFilter = (noteEle: Notes) => {
         if (searchValue.trim().length >= 2) {
@@ -37,7 +37,7 @@ const NotesPage = (): React.JSX.Element => {
         }, 100);
 
         return () => clearTimeout(debounceSearch);
-    }, [searchValue]);
+    }, [searchValue, trySearch, setSearchLength]);
 
     return (
         <>
