@@ -1,6 +1,8 @@
 export type SearchBarProps = {
-    onSearch?: (query: string) => void;
+    onSearch: (query: string) => void;
     placeholder?: string;
+    messages: string[];
+    searchValue: string;
 }
 
 export type FragranceResult = {
