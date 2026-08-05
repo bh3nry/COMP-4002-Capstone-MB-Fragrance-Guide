@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
+import { useAuth } from '@clerk/clerk-react';
 import { FormContext } from './formContextData';
 import type { ProfileData, ScentTag } from '../components/commons/profile/profile-data';
 import type { Notes, FavouriteFragrance } from '../types/notesType';
@@ -21,6 +22,19 @@ export const FormProvider = ({ children }: FormProviderProps) => {
   const [favNotes, setFavNotes] = useState<Notes[]>(mockNotesData);
   const [favFragrances, setFavFragrances] = useState<FavouriteFragrance[]>([]);
 
+  // Rate limiting using sessionStorage
+  // Components that rely on this: Header + Home
+  const [scentCount, setScentCount] = useState<number>(() =>
+    Number(sessionStorage.getItem("tries")) || 0
+  );
+
+  useEffect(() => {
+    sessionStorage.setItem("tries", String(scentCount));
+  }, [scentCount]);
+
+  const { isSignedIn } = useAuth();
+  const outOfTries = !isSignedIn && scentCount >= 3;
+
   return (
     <FormContext.Provider value={{ 
       userNote, 
@@ -31,8 +45,11 @@ export const FormProvider = ({ children }: FormProviderProps) => {
       setSelectedTags, 
       favNotes, 
       setFavNotes, 
-      favFragrances, 
-      setFavFragrances 
+      favFragrances,
+      setFavFragrances,
+      scentCount,
+      setScentCount,
+      outOfTries
       }}>
         {children}
     </FormContext.Provider>

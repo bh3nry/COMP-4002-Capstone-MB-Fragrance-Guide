@@ -3,6 +3,7 @@ import './home.css'
 import ProductCard from "../commons/productcard/ProductCard";
 import { useForm } from '../../hooks/useForm';
 import useReco  from "../../hooks/useReco";
+import SignInGateKeeper from "../commons/auth/SignInGateKeeper";
 
 const heroHeaderOptions = [
     "Find your signature scent.",
@@ -25,7 +26,7 @@ const Home = (): React.JSX.Element => {
             return heroHeaderOptions[index]
     })
     
-    const { userNote, setUserNote } = useForm();
+    const { userNote, setUserNote, setScentCount, outOfTries } = useForm();
     const { recommendations, isPending, error } = useReco(userNote);
 
     const useFragrances = recommendations.length > 0 && recommendations.map(
@@ -60,7 +61,10 @@ const Home = (): React.JSX.Element => {
             {note}
         </button>
     ))
-    return (
+
+    return outOfTries ?
+        <SignInGateKeeper />
+        : (
         <div className="homepage-wrapper">
             <h1>{heroTextGenerator}</h1>
             <form action={getFormData}>
@@ -75,7 +79,11 @@ const Home = (): React.JSX.Element => {
                         required
                     />
                 </div>
-                <button className="new-note-btn">Add New Note</button>
+                <button 
+                    onClick={() => setScentCount(prev => prev + 1)}
+                    className="new-note-btn">
+                    Add New Note
+                </button>
             </form>
             <ul>{noteMap}</ul>
             {noteMap.length > 0 && <p>Click twice to delete notes!</p>}

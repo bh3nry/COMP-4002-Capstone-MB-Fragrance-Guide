@@ -12,7 +12,7 @@
   padding: 10px 12px 10px 18px;
   transition: border-color 0.2s, box-shadow 0.2s;
   width: 100%;
-  max-width: 400px;
+  /* max-width: 50dvh; */
 }
 
 .search-icon {
@@ -30,6 +30,8 @@
   font-size: 16px;
   color: #967069;
   line-height: 1.5;
+  width: 9dvw;
+  /* height: 2dvh; */
 }
  
 .search-input::placeholder {

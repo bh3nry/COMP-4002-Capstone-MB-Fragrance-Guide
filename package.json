@@ -29,6 +29,7 @@
     "app/*"
   ],
   "dependencies": {
+    "@clerk/react-router": "^3.6.3",
     "concurrently": "^10.0.3",
     "vercel": "^56.2.0"
   },
