@@ -9,7 +9,7 @@
     "build": "tsc",
     "dev": "tsx src/server.ts",
     "start": "npx tsx ./src/server.ts",
-    "vercel-build": "prisma migrate deploy && prisma db seed && npm run build"
+    "vercel-build": "prisma migrate deploy && npm run build"
   },
   "keywords": [],
   "author": "",
