@@ -437,7 +437,8 @@ async function main() {
         update: {},
         create: {
             displayName: "Jane Doe",
-            bio: "This is my fragrance profile."
+            bio: "This is my fragrance profile.",
+            clerkId: "seed_dummy_clerk_id_01"
         }
     });
 
