@@ -12,7 +12,6 @@ function NoteDisplay({
     notes,
 }: {
     notes: Notes,
-    onSaveClick?: () => void
 }) {
     return (
         <>
@@ -26,7 +25,7 @@ function NoteDisplay({
                 /> */}
                 <h3 className="note-name">
                     {notes.name}
-                </h3>
+                </h3> 
                 <div className="description">
                     <p>
                         {notes.description}
