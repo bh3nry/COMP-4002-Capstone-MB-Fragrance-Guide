@@ -1,7 +1,5 @@
 import type { FrontendNotes as Notes } from '@shared/types/frontend-notes';
 import { Link } from "react-router-dom";
-import FavIcon from "../../../assets/heart-icon-favourite";
-import RemoveFavIcon from "../../../assets/heart-icon-unfavourite";
 import "./notes-styles.css";
 
 /**
@@ -12,7 +10,6 @@ import "./notes-styles.css";
  */
 function NoteDisplay({
     notes,
-    onSaveClick
 }: {
     notes: Notes,
     onSaveClick?: () => void
