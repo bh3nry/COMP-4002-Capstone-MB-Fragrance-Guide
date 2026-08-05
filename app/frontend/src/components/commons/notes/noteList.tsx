@@ -12,6 +12,7 @@ function NoteDisplay({
     notes,
 }: {
     notes: Notes,
+    onSaveClick?: () => void
 }) {
     return (
         <>
