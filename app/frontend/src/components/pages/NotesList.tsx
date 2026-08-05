@@ -3,7 +3,7 @@ import { useNotes } from "../../hooks/useNotes";
 import { useSearchNotes } from "../../hooks/useSearchNotes";
 import type { FrontendNotes as Notes } from '@shared/types/frontend-notes';
 import NoteDisplay from "../commons/notes/noteList";
-import SearchInput from "../commons/notes/noteSearch"
+import SearchBar from "../commons/searchbar/SearchBar"
 import "./notes.css";
 
 const NotesPage = (): React.JSX.Element => {
@@ -42,12 +42,12 @@ const NotesPage = (): React.JSX.Element => {
     return (
         <>
             <h1>Scent Notes</h1>
-            <SearchInput searchValue={searchValue}
-                        messages={searchMessages}
-                        handleSearchChange={e => {
+            <SearchBar searchValue={searchValue}
+                       messages={searchMessages}
+                       onSearch={val => {
                             setSearchMessages([]);
-                            setSearchValue(e);
-                        }}/>
+                            setSearchValue(val);
+                       }} />
             <div className="notes-page">
                 {(
                     notes.filter(noteFilter).map((note: Notes) => (
