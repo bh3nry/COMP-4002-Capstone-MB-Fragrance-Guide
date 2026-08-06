@@ -17,16 +17,22 @@ function NoteDisplay({
     notes: Notes,
     onSaveClick?: () => void
 }) {
+    const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        event.stopPropagation();
+        onSaveClick?.();
+    };
+
     return (
         <>
             <Link to={`/notes/${notes.id}`} className="notes-card">
-                {/* <button className="button-notes" onClick={onSaveClick}>
+                <button
+                    type="button"
+                    className="button-notes"
+                    onClick={handleButtonClick}
+                >
                     {notes.isFavourite ? <FavIcon /> : <RemoveFavIcon />}
                 </button>
-                <img
-                    src={notes.image}
-                    alt={notes.name}
-                /> */}
                 <h3 className="note-name">
                     {notes.name}
                 </h3>

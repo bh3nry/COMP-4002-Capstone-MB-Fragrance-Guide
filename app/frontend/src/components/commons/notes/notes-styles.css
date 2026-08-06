@@ -22,15 +22,6 @@
     margin: 30px;
 }
 
-.notes-card > img {
-    width: 30%;
-    height: auto;
-    align-self: center;
-    border-radius: 5px;
-    object-fit: cover;
-
-}
-
 .note-name {
     font-weight: 500px;
     margin: 10px;
