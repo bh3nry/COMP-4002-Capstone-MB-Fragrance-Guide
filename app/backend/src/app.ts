@@ -21,16 +21,15 @@ const app: Express = express()
 app.use(cors(corsOptions));
 app.use(express.json())
 
+app.get('/', (_req: Request, res: Response) => {
+  res.send('Health Check, everything good?');
+});
+
 //  Above backend middleware so that guests can interact with the home page.
 app.use("/api/v1", scentRouter)
 
 // clerk middleware
 app.use(clerkMiddleware());
-
-// Health Check
-app.get('/', (_req: Request, res: Response) => {
-  res.send('Health Check, everything good?');
-});
 
 // Routes
 app.use("/api/v1/profile", profileRoutes);
