@@ -1,4 +1,4 @@
-import { prisma } from "../../../../prisma/prisma";
+import { prisma } from "../../../../prisma/prisma.js";
 
 // returns all tags for the logged in user
 export const fetchTags = async (clerkId: string) => {

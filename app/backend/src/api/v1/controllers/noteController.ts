@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 // import type {Notes} from "@prisma/client";
-import * as noteService from "../services/noteService";
-import { successResponse } from "../models/responseModel";
+import * as noteService from "../services/noteService.js";
+import { successResponse } from "../models/responseModel.js";
 
 
 export const getAllNotes = async(

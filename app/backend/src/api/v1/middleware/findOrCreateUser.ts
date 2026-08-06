@@ -1,4 +1,4 @@
-import * as userService from "../services/userService";
+import * as userService from "../services/userService.js";
 import type { Request, Response, NextFunction } from "express";
 import { getAuth } from "@clerk/express";
 

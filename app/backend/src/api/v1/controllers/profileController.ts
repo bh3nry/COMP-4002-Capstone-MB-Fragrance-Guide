@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { fetchProfile, saveProfile } from "../services/profileService";
+import { fetchProfile, saveProfile } from "../services/profileService.js";
 import { getAuth } from "@clerk/express";
 
 // GET /profile

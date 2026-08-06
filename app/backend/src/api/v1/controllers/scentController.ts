@@ -1,5 +1,5 @@
 import { type Request, type Response, type NextFunction } from "express";
-import * as scentService from "../services/scentService.ts"
+import * as scentService from "../services/scentService.js"
 
 export const getAllScents = async (_req: Request, res: Response, next: NextFunction) => {
     try {

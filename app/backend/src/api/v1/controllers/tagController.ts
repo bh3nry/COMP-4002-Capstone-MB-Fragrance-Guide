@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { fetchTags, saveTags } from "../services/tagService";
+import { fetchTags, saveTags } from "../services/tagService.js";
 import { getAuth } from "@clerk/express";
 
 // GET /tags

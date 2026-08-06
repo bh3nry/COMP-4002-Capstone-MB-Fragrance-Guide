@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import { fetchAllLocations, fetchLocationById } from "../services/locationService";
+import { fetchAllLocations, fetchLocationById } from "../services/locationService.js";
 
 // GET /locations
 export const getAllLocations = async (req: Request, res: Response): Promise<void> => {

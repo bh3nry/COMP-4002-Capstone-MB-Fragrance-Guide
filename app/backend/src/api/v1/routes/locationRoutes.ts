@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { getAllLocations, getLocationById } from "../controllers/locationController";
-// import { validateLocation } from "../middleware/validateLocation";
+import { getAllLocations, getLocationById } from "../controllers/locationController.js";
+// import { validateLocation } from "../middleware/validateLocation.js";
 
 const router = Router();
 
