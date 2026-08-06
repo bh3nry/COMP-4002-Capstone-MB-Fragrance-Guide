@@ -9,6 +9,7 @@
     "git": {
         "deploymentEnabled": {
             "*": false,
+            "development": true,
             "main": true
         }
     }

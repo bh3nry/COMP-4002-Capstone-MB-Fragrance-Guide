@@ -11,10 +11,14 @@
 }
 
 .profile-page h1 {
-    font-family: 'Cormorant Upright', serif;
+    font-family: var(--heading);
     font-size: 32px;
-    color: #967069;
+    color: var(--text-h);
     margin-bottom: 24px;
+}
+
+.profile-page__guest {
+    color: var(--muted);
 }
 
 .profile-page__content {

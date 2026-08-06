@@ -1,24 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@400;700&display=swap');
+
 :root {
-  --text: #967069;
+  --text: #7e5b54;
   --text-h: #967069;
+  --muted: #656552;
   --bg: #f1efee;
+  --surface: #e6e1df;
+  --surface-2: #f4efed;
   --border: rgba(150, 112, 105, 0.18);
-  --code-bg: #f4efed;
-  --accent: #F86F6B;
+  --accent: #f86f6b;
+  --accent-strong: #b03b38;
+  --accent-strong-hover: #8f2f2d;
   --accent-bg: rgba(248, 111, 107, 0.1);
   --accent-border: rgba(248, 111, 107, 0.5);
-  --social-bg: rgba(244, 225, 223, 0.5);
+  --error: #b23517;
   --shadow: rgba(150, 112, 105, 0.1) 0 10px 15px -3px, rgba(150, 112, 105, 0.05) 0 4px 6px -2px;
 
   --sans: 'Inter', system-ui, sans-serif;
-  --heading: 'Cormorant Upright', Georgia, serif;
+  --heading: Georgia, serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 16px/145% var(--sans);
-
-  font: 16px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light;
   color-scheme: light;
   color: var(--text);
   background: var(--bg);
@@ -53,13 +56,10 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 400;
-  font-weight: 400;
   color: var(--text-h);
 }
 
 h1 {
-  font-size: 32px;
-  letter-spacing: -0.5px;
   font-size: 32px;
   letter-spacing: -0.5px;
   margin: 32px 0;
@@ -68,17 +68,59 @@ h1 {
 
 h2 {
   font-size: 26px;
-  font-size: 26px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
   @media (max-width: 1024px) {
-    font-size: 22px;
-    font-size: 22px;
+    font-size: 24px;
   }
 }
 
 
 p {
   margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  color: var(--text);
+  cursor: pointer;
+}
+
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 2px;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
 }

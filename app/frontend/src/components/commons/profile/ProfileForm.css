@@ -8,8 +8,8 @@
     align-items: center;
     gap: 16px;
     padding: 32px;
-    background: #f4efed;
-    border: 1.5px solid #9670692e;
+    background: var(--surface-2);
+    border: 1.5px solid var(--border);
     border-radius: 16px;
     width: 100%;
     max-width: 500px;
@@ -28,20 +28,20 @@
     height: 90px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #96706933;
+    border: 2px solid var(--border);
 }
 
 .profile-card__avatar-trigger {
-    border: 2px solid #96706933;
+    border: 2px solid var(--border);
     border-radius: 50%;
 }
 
 /* display name displayed above fields */
 .profile-card__name {
-    font-family: 'Cormorant Upright', serif;
+    font-family: var(--heading);
     font-size: 26px;
     font-weight: 400;
-    color: #967069;
+    color: var(--text-h);
     margin: 0;
 }
 
@@ -51,7 +51,7 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    border: 1.5px solid #9670692e;
+    border: 1.5px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
 }
@@ -61,19 +61,24 @@
     align-items: center;
     gap: 16px;
     padding: 14px 20px;
-    border-bottom: 1px solid #9670691f;
-    background: #f4efed;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
 }
 
 .profile-card__row:last-child {
     border-bottom: none;
 }
 
+.profile-card__row:focus-within {
+    background: #ffffff;
+    box-shadow: inset 3px 0 0 var(--accent);
+}
+
 .profile-card__label {
     font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: 700;
-    color: #967069;
+    color: var(--text);
     min-width: 90px;
 }
 
@@ -83,20 +88,20 @@
     border: none;
     background: transparent;
     outline: none;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--sans);
     font-size: 15px;
-    color: #92927D;
+    color: var(--muted);
     padding: 0;
 }
 
 .profile-card__input:focus,
 .profile-card__textarea:focus {
-    color: #967069;
+    color: var(--text);
 }
 
 .profile-card__input::placeholder,
 .profile-card__textarea::placeholder {
-    color: #92927d80;
+    color: color-mix(in srgb, var(--muted) 55%, transparent);
 }
 
 .profile-card__textarea {
@@ -106,16 +111,16 @@
 }
 
 .profile-card__bio {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: var(--sans);
     font-size: 14px;
-    color: #92927D;
+    color: var(--muted);
     text-align: center;
     margin: 0;
 }
 
 .profile-card__notes {
     width: 100%;
-    border: 1.5px solid #9670692e;
+    border: 1.5px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
     padding: 16px 20px;
@@ -127,7 +132,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #92927D;
+    color: var(--muted);
     margin-bottom: 12px;
 }
 
@@ -141,19 +146,19 @@
 }
 
 .profile-card__notes li {
-    background: #E6E1DF;
-    border: 1.5px solid #9670692e;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
     border-radius: 9999px;
     padding: 6px 14px;
     font-family: 'Lato', sans-serif;
     font-size: 13px;
     font-weight: 700;
-    color: #92927D;
+    color: var(--muted);
 }
 
 .profile-card__save {
     width: 100%;
-    background: #F86F6B;
+    background: var(--accent-strong);
     border: none;
     border-radius: 9999px;
     padding: 10px 20px;
@@ -167,5 +172,5 @@
 }
 
 .profile-card__save:hover {
-    background: #e55a56;
+    background: var(--accent-strong-hover);
 }

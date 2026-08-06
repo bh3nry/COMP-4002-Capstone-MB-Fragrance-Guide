@@ -27,7 +27,7 @@ const ProductCard = ({ title, notes, price }: ProductCardProps) => {
                     <p className="perfume-notes"> 
                         Notes of: {notes}
                     </p>
-                    <div className="price">Price: {price}</div>
+                    <div className="price">Price: ${price}</div>
                 </div>
             </article>
         </>

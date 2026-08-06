@@ -4,20 +4,37 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 24px;
     min-height: 60vh;
     max-width: 1000px;
     margin: auto;
+    padding-inline: 24px;
+    animation: fadeIn 600ms ease both;
+}
+
+.sign-in-wrapper h1 {
+    max-width: 20ch;
+    margin: 0;
 }
 
 .gatekeeper-sign-in {
-    border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
-	color: #FFFFFF;
-	font-size: 12px;
+    border-radius: 9999px;
+	border: 1px solid var(--accent-strong);
+	background-color: var(--accent-strong);
+	color: #ffffff;
+	font-size: 14px;
 	font-weight: bold;
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+	transition: background-color 180ms ease, border-color 180ms ease, transform 80ms ease-in;
+}
+
+.gatekeeper-sign-in:hover {
+    background-color: var(--accent-strong-hover);
+    border-color: var(--accent-strong-hover);
+}
+
+.gatekeeper-sign-in:active {
+    transform: scale(0.97);
 }

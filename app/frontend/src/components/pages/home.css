@@ -19,21 +19,45 @@
     text-align: center;
     align-items: center;
     border-radius: 50px;
-    font-size: 0.8rem;
-    background-color: rgb(247, 244, 244);
-    border: none;
+    font-size: 0.9rem;
+    background-color: var(--surface-2);
+    border: 1.5px solid var(--border);
+    color: var(--text);
     padding: 0.5rem 1rem 0.5rem 1rem;
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.homepage-wrapper input:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-bg);
 }
 
 .new-note-btn {
     align-items: center;
     margin: 1rem;
     font-size: 0.7em;
+    padding: 0.5rem 1.1rem;
 }
 
 .note-buttons {
-    padding: 0.3rem;
+    padding: 0.3rem 0.7rem;
     margin: 0;
+}
+
+.new-note-btn,
+.note-buttons {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 9999px;
+    color: var(--text);
+    transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.new-note-btn:hover,
+.note-buttons:hover {
+    background: var(--surface-2);
+    border-color: var(--accent-border);
 }
 
 .homepage-wrapper ul {
@@ -42,12 +66,13 @@
     margin: auto;
     margin-top: -1.7rem;
     padding: 0;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     gap: 0.3rem;
 }
 
 .homepage-wrapper p {
-    font-size: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--muted);
     align-self: center;
     padding: 0;
     width: fit-content;
@@ -56,11 +81,5 @@
 .reco-list {
     zoom: 0.6;
     padding: 10px;
-    animation: fadeIn 800ms;
+    animation: fadeIn 800ms ease both;
 }
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1;}
-}
-

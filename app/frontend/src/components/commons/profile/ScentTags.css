@@ -9,17 +9,17 @@
     text-align: center;
     gap: 12px;
     padding: 24px;
-    background: #f4efed;
-    border: 1.5px solid #9670692e;
+    background: var(--surface-2);
+    border: 1.5px solid var(--border);
     border-radius: 12px;
     width: 100%;
     max-width: 500px;
 }
 
 .scent-tags h2 {
-    font-family: 'Cormorant Upright', serif;
+    font-family: var(--heading);
     font-size: 26px;
-    color: #967069;
+    color: var(--text-h);
 }
 
 .scent-tags__label {
@@ -28,7 +28,7 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #92927D;
+    color: var(--muted);
 }
 
 .scent-tags__available,
@@ -42,25 +42,30 @@
 }
 
 .scent-tags__tag {
-    background: #E6E1DF;
-    border: 1.5px solid #9670692e;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
     border-radius: 9999px;
     padding: 8px 16px;
     font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: 700;
-    color: #92927D;
+    color: var(--muted);
     cursor: pointer;
-    transition: all 0.18s;
+    transition: background-color 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.scent-tags__tag:hover {
+    border-color: var(--accent-border);
 }
 
 .scent-tags__tag--selected {
-    opacity: 0.4;
+    background: transparent;
+    border-style: dashed;
     cursor: default;
 }
 
 .scent-tags__tag--active {
-    background: #F86F6B;
-    border-color: #F86F6B;
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
     color: #fff;
 }

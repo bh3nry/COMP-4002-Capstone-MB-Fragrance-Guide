@@ -8,7 +8,11 @@
     margin: auto;
     max-width: 450px;
     font-size: 32px;
-    transition: opacity 5s ease, transform 5s ease;
+    transition: transform 220ms ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
 }
 
 .product-card > img {
@@ -27,7 +31,7 @@
     padding: 0.75rem 1.3rem 1.5rem;
     text-align: left;
     margin-top: -35px;
-    background-color: #E6E1DF;
+    background-color: var(--surface);
     border-radius: 0px 0px 20px 20px;
     height: 250px;
     display: flex;
@@ -42,14 +46,16 @@
 
 .product-description > p {
     font-size: 16px;
-    color: #967069;
+    color: var(--muted);
     margin-top: 1em;
 }
 
 div.price {
     margin-top: 10px;
-    padding: 0.2rem;
-    background-color: white;
+    padding: 0.2rem 0.6rem;
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    color: var(--text);
     font-size: 14px;
     align-self: flex-start;
     border-radius: 20px 20px 20px 20px;
