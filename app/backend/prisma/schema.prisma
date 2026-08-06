@@ -17,6 +17,7 @@ model Note {
   id          Int    @id @default(autoincrement())
   name        String @unique
   description String
+  userNotes UserNote[]
 }
 
 // profile table
@@ -46,6 +47,7 @@ model SaleLocation {
 model User {
   id          String        @id
   userProfile UserProfile[]
+  userNotes   UserNote[]
 }
 
 model UserProfile {
@@ -63,4 +65,13 @@ model UserTag {
   tag     String
 
   @@unique([clerkId, tag])
+}
+
+model UserNote {
+  user      User @relation(fields: [userId], references: [id])
+  note      Note @relation(fields: [noteId], references: [id])
+  userId    String
+  noteId    Int
+
+  @@id([userId, noteId])
 }
