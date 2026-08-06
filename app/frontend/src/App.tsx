@@ -33,10 +33,11 @@ const App = (): React.JSX.Element => {
               <Route element={<ProtectedRoutes />}>
                <Route path='notes' element={<Notes />} />
                 <Route path='notes/:noteId' element={<NoteProfilePage />} />
+                <Route path="favourites" element={<FavouritesPage />}/>
               </Route> 
               <Route path='profile'>
               <Route index element={<Profile />} />
-              <Route path="favourites" element={<FavouritesPage />}/>
+
             </Route>
           </Route>
         </Routes>

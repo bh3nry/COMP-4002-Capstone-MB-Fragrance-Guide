@@ -35,9 +35,13 @@ export const useFavouriteNotes = (
             } else {
             await favouriteService.toggleFavouriteNotes(notesId, sessionToken);
             await fetchNotes();
+
+            setFavNotes((prevNotes) =>
+                prevNotes.filter((note) => note.id !== notesId)
+            );
             }
         } catch(error) {
-            error
+            console.log(error);
         }   
     };
 
