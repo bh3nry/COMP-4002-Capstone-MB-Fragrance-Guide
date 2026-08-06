@@ -25,6 +25,6 @@
     "skipLibCheck": true,
     "erasableSyntaxOnly": true,
   },
-    "include": ["src/**/*", "tests/**/*"],
+    "include": ["src/**/*", "tests/**/*", "types", "global.d.ts", "api/index.ts"],
     "exclude": ["node_modules", "dist"]
 }

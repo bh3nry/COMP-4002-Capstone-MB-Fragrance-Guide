@@ -8,9 +8,14 @@ type NoteResponseJSON = {message: string, data: Notes};
 const BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/v1`;
 const NOTES_ENDPOINT = "/notes"
 
-export async function getAllNotes(): Promise<Notes[]> {
+export async function getAllNotes(sessionToken?: string | null): Promise<Notes[]> {
     const noteResponse: Response = await fetch(
-        `${BASE_URL}${NOTES_ENDPOINT}`
+        `${BASE_URL}${NOTES_ENDPOINT}`,
+        sessionToken? {
+            headers: {
+                Authorization: `Bearer ${sessionToken}`,
+            }
+        } : undefined
     );
 
     if(!noteResponse.ok) {
@@ -21,9 +26,14 @@ export async function getAllNotes(): Promise<Notes[]> {
     return json.data;
 }
 
-export async function getNotesById(notesId: number): Promise<Notes> {
+export async function getNotesById(notesId: number, sessionToken?: string | null): Promise<Notes> {
     const noteResponse: Response = await fetch(
-        `${BASE_URL}${NOTES_ENDPOINT}/${notesId}`
+        `${BASE_URL}${NOTES_ENDPOINT}/${notesId}`,
+        sessionToken? {
+            headers: {
+                Authorization: `Bearer ${sessionToken}`
+            }
+        } : undefined
     );
 
     if(!noteResponse.ok) {
@@ -33,39 +43,3 @@ export async function getNotesById(notesId: number): Promise<Notes> {
     const json: NoteResponseJSON = await noteResponse.json();
     return json.data;
 }
-
-// export async function addFavouriteNote(note: Notes) {
-//     note.isFavourite = true;
-
-//     const updateResponse: Response = await fetch(
-//         `${BASE_URL}${NOTES_ENDPOINT}/${note.id}`,
-//         {
-//             method: "PUT",
-//             body: JSON.stringify({...note}),
-//             headers: {
-//                 "Content-Type": "application/json",
-//             }
-//         }
-//     );
-
-//     const json: NoteResponseJSON = await updateResponse.json();
-//     return json.data;
-// }
-
-// export async function unfavouriteNote(note: Notes) {
-//     note.isFavourite = false;
-
-//     const updateResponse: Response = await fetch(
-//         `${BASE_URL}${NOTES_ENDPOINT}/${note.id}`,
-//         {
-//             method: "PUT",
-//             body: JSON.stringify({...note}),
-//             headers: {
-//                 "Content-Type": "application/json",
-//             }
-//         }
-//     );
-
-//     const json: NoteResponseJSON = await updateResponse.json();
-//     return json.data;
-// }

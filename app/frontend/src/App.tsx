@@ -3,7 +3,7 @@ import ProtectedRoutes from './components/commons/auth/ProtectedRoutes'
 import Layout from './components/layout/Layout'
 import Home from './components/pages/Home'
 import Notes from './components/pages/NotesList'
-// import FavouritesPage from './components/pages/FavouritesPage'
+import FavouritesPage from './components/pages/FavouritesPage'
 import Profile from './components/pages/Profile'
 import React from 'react'
 
@@ -33,10 +33,11 @@ const App = (): React.JSX.Element => {
               <Route element={<ProtectedRoutes />}>
                <Route path='notes' element={<Notes />} />
                 <Route path='notes/:noteId' element={<NoteProfilePage />} />
+                <Route path="favourites" element={<FavouritesPage />}/>
               </Route> 
               <Route path='profile'>
               <Route index element={<Profile />} />
-              {/* <Route path="favourites" element={<FavouritesPage />}/> */}
+
             </Route>
           </Route>
         </Routes>

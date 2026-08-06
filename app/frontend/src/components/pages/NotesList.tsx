@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import { useAuth } from "@clerk/clerk-react";
+import * as favouriteService from "../../services/favouriteService";
 import { useNotes } from "../../hooks/useNotes";
 import { useSearchNotes } from "../../hooks/useSearchNotes";
 import type { FrontendNotes as Notes } from '@shared/types/frontend-notes';
 import NoteDisplay from "../commons/notes/noteList";
-import SearchInput from "../commons/notes/noteSearch"
+import SearchBar from "../commons/searchbar/SearchBar"
 import "./notes.css";
 
 const NotesPage = (): React.JSX.Element => {
 
-    const { notes } = useNotes();
+    const { notes, fetchNotes } = useNotes();
+    const { getToken, isSignedIn } = useAuth();
     const {
         searchValue,
         setSearchValue,
@@ -24,6 +27,24 @@ const NotesPage = (): React.JSX.Element => {
         }
 
         return true;
+    };
+
+    const handleToggleFavourite = async (noteId: number) => {
+        try {
+            if (!isSignedIn) {
+                return;
+            }
+
+            const token = await getToken();
+            if (!token) {
+                return;
+            }
+
+            await favouriteService.toggleFavouriteNotes(noteId, token);
+            await fetchNotes();
+        } catch (error) {
+            console.error("Unable to toggle favourite", error);
+        }
     };
 
     useEffect(() => {
@@ -42,16 +63,20 @@ const NotesPage = (): React.JSX.Element => {
     return (
         <>
             <h1>Scent Notes</h1>
-            <SearchInput searchValue={searchValue}
-                        messages={searchMessages}
-                        handleSearchChange={e => {
+            <SearchBar searchValue={searchValue}
+                       messages={searchMessages}
+                       onSearch={e => {
                             setSearchMessages([]);
                             setSearchValue(e);
-                        }}/>
+                       }} />
             <div className="notes-page">
                 {(
                     notes.filter(noteFilter).map((note: Notes) => (
-                        <NoteDisplay key={note.id} notes={note} />
+                        <NoteDisplay
+                            key={note.id}
+                            notes={note}
+                            onSaveClick={() => handleToggleFavourite(note.id)}
+                        />
                     ))
                 )}
             </div>

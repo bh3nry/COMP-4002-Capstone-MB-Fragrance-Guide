@@ -1,6 +1,9 @@
 import type { FrontendNotes as Notes } from '@shared/types/frontend-notes';
 import { Link } from "react-router-dom";
+import FavIcon from "../../../assets/heart-icon-favourite";
+import RemoveFavIcon from "../../../assets/heart-icon-unfavourite";
 import "./notes-styles.css";
+
 
 /**
  * Component for displaying fragrance notes in a list format
@@ -10,20 +13,27 @@ import "./notes-styles.css";
  */
 function NoteDisplay({
     notes,
+    onSaveClick,
 }: {
     notes: Notes,
     onSaveClick?: () => void
 }) {
+    const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        event.stopPropagation();
+        onSaveClick?.();
+    };
+
     return (
         <>
             <Link to={`/notes/${notes.id}`} className="notes-card">
-                {/* <button className="button-notes" onClick={onSaveClick}>
+                <button
+                    type="button"
+                    className="button-notes"
+                    onClick={handleButtonClick}
+                >
                     {notes.isFavourite ? <FavIcon /> : <RemoveFavIcon />}
                 </button>
-                <img
-                    src={notes.image}
-                    alt={notes.name}
-                /> */}
                 <h3 className="note-name">
                     {notes.name}
                 </h3> 
@@ -31,16 +41,6 @@ function NoteDisplay({
                     <p>
                         {notes.description}
                     </p>
-                    {/* <details className="dropdown">
-                        <summary>Fragrance Suggestions</summary>
-                        <ul className="menu dropdown-content">
-                            <li>
-                                {(
-                                    notes.info.map((d) => d.suggestions)
-                                )}
-                            </li>
-                        </ul>
-                    </details> */}
                 </div>
             </Link>
         </>
