@@ -1,7 +1,6 @@
 import type { Request, Response, NextFunction } from "express";
-import * as userNotesService from "../services/userNotesService";
-import { successResponse } from "../models/responseModel";
-import type { UserNote } from "../../../../generated/prisma";
+import * as userNotesService from "../services/userNotesService.ts";
+import { successResponse } from "../models/responseModel.ts";
 import { getAuth } from "@clerk/express";
 
 
@@ -14,7 +13,7 @@ export const createUserNote = async(
         const { userId } = getAuth(req);
 
         if(userId) {
-            const newUserNote: UserNote = await userNotesService.createUserNote(
+            const newUserNote = await userNotesService.createUserNote(
                 userId,
                 Number.parseInt(req.params.noteId as string)
             );

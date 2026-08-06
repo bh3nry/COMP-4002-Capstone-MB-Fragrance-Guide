@@ -2,8 +2,8 @@ import express, {Router} from "express";
 // TODO: Add validation schema and middleware
 // import { validateRequest } from "../middleware/validate";
 // import { termSchema } from "../validations/termValidation";
-import * as userNoteController from "../controllers/userNoteController";
-import { findOrCreateUser } from "../middleware/findOrCreateUser";
+import * as userNoteController from "../controllers/userNoteController.ts";
+import { findOrCreateUser } from "../middleware/findOrCreateUser.ts";
 
 
 

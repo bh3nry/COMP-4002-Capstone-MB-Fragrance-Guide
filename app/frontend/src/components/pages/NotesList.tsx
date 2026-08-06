@@ -36,6 +36,10 @@ const NotesPage = (): React.JSX.Element => {
             }
 
             const token = await getToken();
+            if (!token) {
+                return;
+            }
+
             await favouriteService.toggleFavouriteNotes(noteId, token);
             await fetchNotes();
         } catch (error) {
