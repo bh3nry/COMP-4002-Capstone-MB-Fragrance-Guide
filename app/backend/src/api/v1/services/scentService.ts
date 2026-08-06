@@ -1,4 +1,4 @@
-import * as scentRepo from "../repository/scentRepository.ts"
+import * as scentRepo from "../repository/scentRepository.js"
 
 export const getAllFromScentRepo = async () => {
     try {

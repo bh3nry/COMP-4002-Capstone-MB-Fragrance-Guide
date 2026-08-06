@@ -1,5 +1,5 @@
 import express, { Router } from "express";
-import * as scentController from "../controllers/scentController.ts"
+import * as scentController from "../controllers/scentController.js"
 
 const scentRouter: Router = express.Router()
 

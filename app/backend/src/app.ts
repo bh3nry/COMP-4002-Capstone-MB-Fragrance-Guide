@@ -8,12 +8,12 @@ import { clerkMiddleware, getAuth } from "@clerk/express";
 dotenv.config({ path: './.env' });
 
 // Add local import statements here
-import corsOptions from "../config/cors.ts";
-import scentRouter from './api/v1/routes/scentRoutes.ts';
-import profileRoutes from './api/v1/routes/profileRoutes.ts';
-import locationRoutes from './api/v1/routes/locationRoutes.ts';
-import noteRoutes from './api/v1/routes/noteRoutes.ts';
-import tagRoutes from './api/v1/routes/tagRoutes.ts';
+import corsOptions from "../config/cors.js";
+import scentRouter from './api/v1/routes/scentRoutes.js';
+import profileRoutes from './api/v1/routes/profileRoutes.js';
+import locationRoutes from './api/v1/routes/locationRoutes.js';
+import noteRoutes from './api/v1/routes/noteRoutes.js';
+import tagRoutes from './api/v1/routes/tagRoutes.js';
 
 const app: Express = express()
 
