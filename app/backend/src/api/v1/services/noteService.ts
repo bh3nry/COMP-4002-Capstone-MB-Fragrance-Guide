@@ -1,6 +1,6 @@
 import type { Note } from "../../../../generated/prisma/client.js";
 import { prisma } from "../../../../prisma/prisma.js";
-import type { NoteWithUsers } from "../../../../types/noteWithUsers";
+import type { NoteWithUsers } from "../../../../types/noteWithUsers.js";
 
 
 export const getAllNotes = async(): Promise<NoteWithUsers[]> => {
