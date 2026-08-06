@@ -19,6 +19,7 @@ function Header() {
                     <NavLink to="/"> Home </NavLink>
                     <NavLink to="notes"> Notes </NavLink>
                     <NavLink to="profile"> Profile </NavLink>
+                    <NavLink to="profile/favourites"> Favourites </NavLink>
                 </ul>
 
                 {/* shows sign in button when logged out, user button when logged in */}

@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import type { ProfileData, ScentTag } from '../components/commons/profile/profile-data';
-import type { Notes, FavouriteFragrance } from '../types/notesType';
+import type { FrontendNotes as Notes } from '@shared/types/frontend-notes';
 
 export type FormContextValue = {
   userNote: string[];
@@ -12,8 +12,6 @@ export type FormContextValue = {
   setSelectedTags: Dispatch<SetStateAction<ScentTag[]>>;
   favNotes: Notes[];
   setFavNotes: Dispatch<SetStateAction<Notes[]>>;
-  favFragrances: FavouriteFragrance[];
-  setFavFragrances: Dispatch<SetStateAction<FavouriteFragrance[]>>;
   scentCount: number;
   setScentCount: Dispatch<SetStateAction<number>>;
   outOfTries: boolean;
