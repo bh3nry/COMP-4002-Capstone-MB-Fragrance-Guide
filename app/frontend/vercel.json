@@ -1,6 +1,11 @@
 {
     "relatedProjects": ["prj_3QtShma4sZCvHP8xxGuznvyuV4KN"],
-    
+            "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "index.html" 
+        }
+    ],
     "git": {
         "deploymentEnabled": {
             "*": false,
